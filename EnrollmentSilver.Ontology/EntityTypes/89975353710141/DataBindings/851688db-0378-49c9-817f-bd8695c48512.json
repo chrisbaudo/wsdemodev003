@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "851688db-0378-49c9-817f-bd8695c48512",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "term_id",
+        "targetPropertyId": "2877023908371187822"
+      },
+      {
+        "sourceColumnName": "course_id",
+        "targetPropertyId": "2877023965925381949"
+      },
+      {
+        "sourceColumnName": "section",
+        "targetPropertyId": "2877023994501796283"
+      },
+      {
+        "sourceColumnName": "crn",
+        "targetPropertyId": "2877024022217762479"
+      },
+      {
+        "sourceColumnName": "subject",
+        "targetPropertyId": "2877024043446412651"
+      },
+      {
+        "sourceColumnName": "catalog_nbr",
+        "targetPropertyId": "2877024067793292840"
+      },
+      {
+        "sourceColumnName": "course_title",
+        "targetPropertyId": "2877024089611173947"
+      },
+      {
+        "sourceColumnName": "credits",
+        "targetPropertyId": "2877024114223362797"
+      },
+      {
+        "sourceColumnName": "instructor",
+        "targetPropertyId": "2877024138011263764"
+      },
+      {
+        "sourceColumnName": "max_enrollment",
+        "targetPropertyId": "2877024161774307383"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "d2a440f4-6d00-4354-9f77-a2fcae66e547",
+      "itemId": "e513c730-c3e9-4ee4-9417-e402e73abdf2",
+      "sourceTableName": "courses",
+      "sourceSchema": "dbo"
+    }
+  }
+}

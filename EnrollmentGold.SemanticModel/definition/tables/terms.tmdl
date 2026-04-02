@@ -1,0 +1,104 @@
+table terms
+	lineageTag: d9c82cf5-3b9a-4c86-b2d7-f5fe9654c891
+	sourceLineageTag: [dbo].[terms]
+
+	column term_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 4f382dd9-99d7-4af5-a742-f7f9505b4987
+		sourceLineageTag: term_id
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column term_name
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 3cfe8010-6cca-4393-b995-e866d818052d
+		sourceLineageTag: term_name
+		summarizeBy: none
+		sourceColumn: term_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: varchar(-1)
+		lineageTag: 643ffe88-0fed-4960-8b0f-7d48bf0c644f
+		sourceLineageTag: start_date
+		summarizeBy: none
+		sourceColumn: start_date
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column end_date
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: varchar(-1)
+		lineageTag: 6ea87663-d733-449e-8777-16ec7b82d49e
+		sourceLineageTag: end_date
+		summarizeBy: none
+		sourceColumn: end_date
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column instruction_weeks
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 8dd81a63-4892-4afa-b76f-9ab0bec99b22
+		sourceLineageTag: instruction_weeks
+		summarizeBy: none
+		sourceColumn: instruction_weeks
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ingest_ts
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 191ecc7d-e5c9-4f4e-8e66-8f2c73afaa10
+		sourceLineageTag: _ingest_ts
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_table
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(-1)
+		lineageTag: e187ccba-24f9-4d71-ad19-f9faa04d2ccb
+		sourceLineageTag: _source_table
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition terms = entity
+		mode: directLake
+		source
+			entityName: terms
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

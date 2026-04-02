@@ -1,0 +1,4 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/publishInfo/1.0.0/schema.json",
+  "description": "This agent helps users (registrar staff, advisors admissions, and enrollment ops) answer questions and take next steps related to student enrollment."
+}

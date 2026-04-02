@@ -1,0 +1,831 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "a8076b92-a99c-9b37-4b66-9b921ecf090b",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "IPEDS Enrollment Trends",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "4aab3232-786f-4859-a184-29ba3fb9caa6",
+      "is_selected": true,
+      "display_name": "ACT",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "dde655f2-a077-4e2c-8321-338d68a90871",
+          "is_selected": true,
+          "display_name": "ACT Composite 25th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a4ac9a54-ae53-4c47-be7f-ece9e670d004",
+          "is_selected": true,
+          "display_name": "ACT Composite 75th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f3de088a-85fc-4e1e-b3f2-6bfe4e9063db",
+          "is_selected": true,
+          "display_name": "ACT English 25th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bbfdcfe5-9914-491e-bb73-9d6d8f1b5fa6",
+          "is_selected": true,
+          "display_name": "ACT English 75th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bba48ad7-c266-4cba-b96e-17d518aa44c7",
+          "is_selected": true,
+          "display_name": "ACT Math 25th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aa1beb27-81ff-4048-a8bb-2d068ced8844",
+          "is_selected": true,
+          "display_name": "ACT Math 75th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aaefa817-985b-415d-8a7a-9517d40016dc",
+          "is_selected": true,
+          "display_name": "InstituteID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a3aced56-965b-408a-adce-0a3d867a1a6d",
+          "is_selected": true,
+          "display_name": "InstituteName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e4b8557c-c396-4ec3-b3e0-c463f5609beb",
+          "is_selected": true,
+          "display_name": "Percent Students ACT",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2be5bcf5-1247-4ea7-be10-896a89ad1715",
+          "is_selected": true,
+          "display_name": "PY Students ACT",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b94f7ddc-de6d-4e8a-ad84-99a224364dbe",
+          "is_selected": true,
+          "display_name": "Students ACT",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "63cfc93d-345f-436d-b8e6-c7ab5775d7d3",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e297ab43-06ba-4319-b2fe-4c8aecc2acf1",
+          "is_selected": true,
+          "display_name": "YOY Students ACT Change",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "9eb45930-0462-4108-b6ec-5d8b93b6e22c",
+      "is_selected": true,
+      "display_name": "Date",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "56517144-96b9-43cd-a496-69c2651851b4",
+          "is_selected": true,
+          "display_name": "Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "93e40a3c-aa89-418c-9036-d309c95281a5",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6156c995-392c-4dd0-bdff-54955397ba60",
+      "is_selected": true,
+      "display_name": "Degrees by Gender",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "f6f8347f-dd5d-4736-993e-1f903b85f7f5",
+          "is_selected": true,
+          "display_name": "Average Degrees",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "524786f9-188c-454f-b788-0b1e4bd40388",
+          "is_selected": true,
+          "display_name": "CY Degrees",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8a555a4-06b0-4e79-a578-dcd07d1cf2b7",
+          "is_selected": true,
+          "display_name": "Degree Description",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b9f0b03b-b9f3-402a-8cfb-6d5fafa9586a",
+          "is_selected": true,
+          "display_name": "Degree Type",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5985bd65-8493-4031-b3d4-c690e3464447",
+          "is_selected": true,
+          "display_name": "Degrees",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "12533028-4600-4546-a73b-1d0344a2a1ea",
+          "is_selected": true,
+          "display_name": "Degrees Most Recent Year",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "21a2f4dc-f964-4d79-b3ed-1e749c239100",
+          "is_selected": true,
+          "display_name": "InstituteID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1a2460cd-2c66-4707-91fe-761ea4a407fc",
+          "is_selected": true,
+          "display_name": "InstituteName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "155e66ba-2519-4d76-aef2-189be7926d2b",
+          "is_selected": true,
+          "display_name": "Men Degrees",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e34211dd-a389-4ac8-bdcf-692354f22ff2",
+          "is_selected": true,
+          "display_name": "Percent Degree Type of Total",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ee0a1527-eff9-4cea-901a-6d51ab83b1ea",
+          "is_selected": true,
+          "display_name": "Percent Degrees Men",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a240d013-58a6-4b94-86e8-90214a83c4b4",
+          "is_selected": true,
+          "display_name": "Percent Degrees Women",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1fb7be96-4329-410e-af04-7bcb78b392d9",
+          "is_selected": true,
+          "display_name": "PY Degrees",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "54cddcf4-12d6-461d-9730-46bb5327f80f",
+          "is_selected": true,
+          "display_name": "Women Degrees",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "21e664f4-c1ad-42c0-aed3-53b9bb19d27b",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e9e74841-14b0-4b14-935c-8d041295e613",
+          "is_selected": true,
+          "display_name": "YOY Degrees Change %",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "f0e57e26-c3c0-4a7c-8f42-5190ad774a68",
+      "is_selected": true,
+      "display_name": "Enrollment",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "126ff0a2-38b4-4738-b361-f8c7bc0ac2b3",
+          "is_selected": true,
+          "display_name": "Average Enrollment",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ad7a2f73-712d-4351-b484-fc7b15e4ac21",
+          "is_selected": true,
+          "display_name": "CY Enrollment",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "680c540d-b87d-4000-b8e6-2289fd03cd5c",
+          "is_selected": true,
+          "display_name": "Enrollment",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "78d22d17-5946-49ce-8cc2-92af582bf0d1",
+          "is_selected": true,
+          "display_name": "PY Enrollment",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "87c843e0-3c5f-462d-9973-b74a53a0565a",
+          "is_selected": true,
+          "display_name": "YOY Distance from Enrollment Goal %",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "85c426e5-58a2-4f80-b161-baf6c296b439",
+          "is_selected": true,
+          "display_name": "YOY Enrollment Change",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d77821d-d438-4138-876e-505452504a73",
+          "is_selected": true,
+          "display_name": "YOY Enrollment Change %",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a20e95be-fbcb-429b-895c-0dcf2b7eb39f",
+          "is_selected": true,
+          "display_name": "YOY Enrollment Change Goal",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e3a1818c-d1c3-47a0-a44f-004b2668d3f7",
+      "is_selected": true,
+      "display_name": "Institute Logo",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "3cfa10f6-9db3-4637-b8cc-2945d0f52935",
+          "is_selected": true,
+          "display_name": "Imgage URL",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e4aafbb2-cee2-43f8-9fed-455eb2518405",
+          "is_selected": true,
+          "display_name": "Institute Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e6d8156d-797f-483f-81c4-4ea341bce920",
+      "is_selected": true,
+      "display_name": "Institution",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "138ffabf-6393-42d2-977a-f3a44a45b25a",
+          "is_selected": true,
+          "display_name": "Active",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "85742185-8d8b-4add-8b04-388630e8129f",
+          "is_selected": true,
+          "display_name": "Address",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bef11530-932f-4f1c-b17d-ab4f9856ff1e",
+          "is_selected": true,
+          "display_name": "Alias",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0675bec3-297b-4e69-a447-0c612eea0440",
+          "is_selected": true,
+          "display_name": "Category",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d2d0def4-95c0-4d05-a67a-aa2e666bbf4b",
+          "is_selected": true,
+          "display_name": "ChiefAdmininistratorTitle",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66187cda-6e74-4f79-a3f5-a3b48cfb4038",
+          "is_selected": true,
+          "display_name": "ChiefAdministrator",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "50ec965d-f941-4a79-9a7c-f77ef39f3192",
+          "is_selected": true,
+          "display_name": "City",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2c8ad1cb-3fc5-4c5a-b455-144f94a2a93d",
+          "is_selected": true,
+          "display_name": "Congressional District",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3489ba8a-67e2-43a7-8326-f13ab092506c",
+          "is_selected": true,
+          "display_name": "Control",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "35277237-954d-4835-a73e-f0e3e68c8abe",
+          "is_selected": true,
+          "display_name": "County Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "846577e9-4b4b-43fc-ae57-493310e7b9e0",
+          "is_selected": true,
+          "display_name": "CountyCode",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d5f74057-5397-47b7-b663-94227ffb9dad",
+          "is_selected": true,
+          "display_name": "EIN",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "80a18ae1-e955-4d42-b98c-a77732296bf5",
+          "is_selected": true,
+          "display_name": "FIPS",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cd4b7c8e-31e1-4cb2-ac21-9c6660c44e30",
+          "is_selected": true,
+          "display_name": "GeographicRegion",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "caab7d48-d040-4681-b1cf-ad661d9355e1",
+          "is_selected": true,
+          "display_name": "Hospital",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0b7c7c79-470a-4a89-81de-d357e8308ec4",
+          "is_selected": true,
+          "display_name": "Institute ID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "605bb74c-50b4-4362-8b68-67f15d8ba844",
+          "is_selected": true,
+          "display_name": "Institute Name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b26a4e8b-c207-4c90-bc3e-9da2f5ef5c99",
+          "is_selected": true,
+          "display_name": "Latitude",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d5770cb3-a87b-4e29-a89f-ba24a1747a14",
+          "is_selected": true,
+          "display_name": "Level",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "81d3030f-3004-400f-84b1-336e25230cd7",
+          "is_selected": true,
+          "display_name": "Longitude",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cab296c0-6d92-4123-8459-48d3a2d2238c",
+          "is_selected": true,
+          "display_name": "MedicalDegree",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6472d068-41c5-4971-bd40-c967c5b41bb1",
+          "is_selected": true,
+          "display_name": "Open To Public",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4a3bcc16-d6b4-49d5-988b-6791b5de99a7",
+          "is_selected": true,
+          "display_name": "Postal Code",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e625a723-3af6-4f31-8e71-4280af92e3f7",
+          "is_selected": true,
+          "display_name": "Sector",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1b15461d-a608-4d6b-90d4-bfc6e629ed98",
+          "is_selected": true,
+          "display_name": "State Abr",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "563675ba-3210-4105-971e-9b8e9f6b57d3",
+          "is_selected": true,
+          "display_name": "UrbanCentricLocal",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3a68ba2e-f637-452c-b841-d3583b60783f",
+          "is_selected": true,
+          "display_name": "YOY Degrees Change Rank",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "17a242c3-b9ee-4b68-9c45-a437bb344a0d",
+          "is_selected": true,
+          "display_name": "YOY Enrollment Change Rank",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "dc93492e-e908-4e38-9d57-79131861acb9",
+      "is_selected": true,
+      "display_name": "SAT",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "f90670a5-bd11-4170-bda8-f8a6ba3a6842",
+          "is_selected": true,
+          "display_name": "InstituteID",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "cd690f1a-4234-49bc-89e8-a2caf7136ee8",
+          "is_selected": true,
+          "display_name": "InstituteName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "657d623b-3dd7-4acd-9280-3c1fce978da9",
+          "is_selected": true,
+          "display_name": "Percent Students SAT",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "60104ebf-1926-490d-9819-949f56cd52b2",
+          "is_selected": true,
+          "display_name": "PY Students SAT",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3dddff6d-51e8-4cb9-8f14-ef7f544846a2",
+          "is_selected": true,
+          "display_name": "SAT I Math 25th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bd4eb8a0-a498-4a15-93e1-85c243a307ba",
+          "is_selected": true,
+          "display_name": "SAT I Math 75th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "10f1dc8e-c58e-499c-8e1b-4b546a3bba2f",
+          "is_selected": true,
+          "display_name": "SAT I Verbal 25th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "279f0c13-79ac-42fe-b540-eb5f60421a31",
+          "is_selected": true,
+          "display_name": "SAT I Verbal 75th Percentile",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e1959037-7585-4d1d-9a26-7f235fc09189",
+          "is_selected": true,
+          "display_name": "Students SAT",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "267908e0-d9a3-4475-9ec2-66045f07ac33",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9987535f-3698-41f2-b85a-fed993951b8c",
+          "is_selected": true,
+          "display_name": "YOY Students SAT Change",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "539ccad3-651d-49bf-bf32-652fe1a40cee",
+      "is_selected": true,
+      "display_name": "Urban Centric",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "62b73a71-bc90-417c-80b2-d625448ad077",
+          "is_selected": true,
+          "display_name": "Urban Category",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8022d941-8ef5-47a8-9021-92375f98bf65",
+          "is_selected": true,
+          "display_name": "UrbanCentricCategory",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5c02a01b-949f-4f04-b161-20e1736ded07",
+          "is_selected": true,
+          "display_name": "UrbanCentricLocal",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

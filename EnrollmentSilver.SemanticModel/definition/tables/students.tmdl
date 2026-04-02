@@ -1,0 +1,101 @@
+table students
+	lineageTag: f9f8a0cd-4c58-4630-bb94-9ce3e8d1da23
+	sourceLineageTag: [dbo].[students]
+
+	column student_id
+		dataType: string
+		lineageTag: 7ffb53ad-200b-4e2e-8c26-98e92f1d9729
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 4cb70e55-d0be-4132-821a-c58646059095
+		sourceLineageTag: first_name
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: 7a65ba2f-9009-4e28-84be-872c775eb50b
+		sourceLineageTag: last_name
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_birth
+		dataType: string
+		lineageTag: 437d8769-ee32-456d-8988-e8793654ca4e
+		sourceLineageTag: date_of_birth
+		summarizeBy: none
+		sourceColumn: date_of_birth
+
+		annotation SummarizationSetBy = Automatic
+
+	column admit_term
+		dataType: string
+		lineageTag: 21340e72-a5d6-47b0-ad94-3be66e8623a2
+		sourceLineageTag: admit_term
+		summarizeBy: none
+		sourceColumn: admit_term
+
+		annotation SummarizationSetBy = Automatic
+
+	column major
+		dataType: string
+		lineageTag: 2fedc60b-8001-456e-8f60-4745e63e33e4
+		sourceLineageTag: major
+		summarizeBy: none
+		sourceColumn: major
+
+		annotation SummarizationSetBy = Automatic
+
+	column class_level
+		dataType: string
+		lineageTag: 8b064224-f873-4af4-a514-a4405dcce9c9
+		sourceLineageTag: class_level
+		summarizeBy: none
+		sourceColumn: class_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column residency
+		dataType: string
+		lineageTag: 4cb6184a-33b2-429f-a888-e3e6dea6184d
+		sourceLineageTag: residency
+		summarizeBy: none
+		sourceColumn: residency
+
+		annotation SummarizationSetBy = Automatic
+
+	column pell_eligible
+		dataType: string
+		lineageTag: cae01dee-89e7-4dad-9616-2e6b2770e35a
+		sourceLineageTag: pell_eligible
+		summarizeBy: none
+		sourceColumn: pell_eligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column cumulative_gpa
+		dataType: string
+		lineageTag: d532c896-076c-4261-97fe-d13c45dabeee
+		sourceLineageTag: cumulative_gpa
+		summarizeBy: none
+		sourceColumn: cumulative_gpa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition students = entity
+		mode: directLake
+		source
+			entityName: students
+			schemaName: dbo
+			expressionSource: 'DirectLake - EnrollmentSilver'
+

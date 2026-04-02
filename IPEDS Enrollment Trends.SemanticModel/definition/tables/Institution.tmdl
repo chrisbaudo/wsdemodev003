@@ -1,0 +1,331 @@
+table Institution
+	lineageTag: e6d8156d-797f-483f-81c4-4ea341bce920
+
+	measure 'YOY Enrollment Change Rank' =
+			
+			IF([CY Enrollment] > 0 && [PY Enrollment] > 0 && HASONEVALUE('Institution'[Institute Name]),RANKX(ALLSELECTED(Institution),[YOY Enrollment Change %],IF([YOY Enrollment Change %] <> 0,[YOY Enrollment Change %],-100),DESC,Dense),BLANK())
+		formatString: #,0
+		lineageTag: 17a242c3-b9ee-4b68-9c45-a437bb344a0d
+
+	measure 'YOY Degrees Change Rank' = IF(HASONEFILTER('Date'[Year]) && [PY Degrees] > 0 && HASONEVALUE('Institution'[Institute Name]),RANKX(ALLSELECTED(Institution),[YOY Degrees Change %],IF([YOY Degrees Change %] <> 0,[YOY Degrees Change %],-100),DESC,Dense),BLANK())
+		formatString: #,0
+		lineageTag: 3a68ba2e-f637-452c-b841-d3583b60783f
+
+	column 'Institute ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b7c7c79-470a-4a89-81de-d357e8308ec4
+		summarizeBy: none
+		sourceColumn: Institute ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Institute Name'
+		dataType: string
+		lineageTag: 605bb74c-50b4-4362-8b68-67f15d8ba844
+		summarizeBy: none
+		sourceColumn: Institute Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Address
+		dataType: string
+		lineageTag: 85742185-8d8b-4add-8b04-388630e8129f
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation CategorySetBy = User
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column City
+		dataType: string
+		lineageTag: 50ec965d-f941-4a79-9a7c-f77ef39f3192
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation CategorySetBy = User
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'State Abr'
+		dataType: string
+		lineageTag: 1b15461d-a608-4d6b-90d4-bfc6e629ed98
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State Abr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation CategorySetBy = User
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: 4a3bcc16-d6b4-49d5-988b-6791b5de99a7
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: Postal Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation CategorySetBy = User
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column FIPS
+		dataType: int64
+		formatString: 0
+		lineageTag: 80a18ae1-e955-4d42-b98c-a77732296bf5
+		summarizeBy: none
+		sourceColumn: FIPS
+
+		annotation SummarizationSetBy = User
+
+	column GeographicRegion
+		dataType: int64
+		formatString: 0
+		lineageTag: cd4b7c8e-31e1-4cb2-ac21-9c6660c44e30
+		summarizeBy: none
+		sourceColumn: GeographicRegion
+
+		annotation SummarizationSetBy = User
+
+	column ChiefAdministrator
+		dataType: string
+		lineageTag: 66187cda-6e74-4f79-a3f5-a3b48cfb4038
+		summarizeBy: none
+		sourceColumn: ChiefAdministrator
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column ChiefAdmininistratorTitle
+		dataType: string
+		lineageTag: d2d0def4-95c0-4d05-a67a-aa2e666bbf4b
+		summarizeBy: none
+		sourceColumn: ChiefAdmininistratorTitle
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column EIN
+		dataType: int64
+		formatString: 0
+		lineageTag: d5f74057-5397-47b7-b663-94227ffb9dad
+		summarizeBy: none
+		sourceColumn: EIN
+
+		annotation SummarizationSetBy = User
+
+	column Sector
+		dataType: int64
+		formatString: 0
+		lineageTag: e625a723-3af6-4f31-8e71-4280af92e3f7
+		summarizeBy: none
+		sourceColumn: Sector
+
+		annotation SummarizationSetBy = User
+
+	column Level
+		dataType: int64
+		formatString: 0
+		lineageTag: d5770cb3-a87b-4e29-a89f-ba24a1747a14
+		summarizeBy: none
+		sourceColumn: Level
+
+		annotation SummarizationSetBy = User
+
+	column Control
+		dataType: int64
+		formatString: 0
+		lineageTag: 3489ba8a-67e2-43a7-8326-f13ab092506c
+		summarizeBy: none
+		sourceColumn: Control
+
+		annotation SummarizationSetBy = User
+
+	column Hospital
+		dataType: int64
+		formatString: 0
+		lineageTag: caab7d48-d040-4681-b1cf-ad661d9355e1
+		summarizeBy: none
+		sourceColumn: Hospital
+
+		annotation SummarizationSetBy = User
+
+	column MedicalDegree
+		dataType: int64
+		formatString: 0
+		lineageTag: cab296c0-6d92-4123-8459-48d3a2d2238c
+		summarizeBy: none
+		sourceColumn: MedicalDegree
+
+		annotation SummarizationSetBy = User
+
+	column UrbanCentricLocal
+		dataType: int64
+		formatString: 0
+		lineageTag: 563675ba-3210-4105-971e-9b8e9f6b57d3
+		summarizeBy: none
+		sourceColumn: UrbanCentricLocal
+
+		annotation SummarizationSetBy = User
+
+	column 'Open To Public'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6472d068-41c5-4971-bd40-c967c5b41bb1
+		summarizeBy: none
+		sourceColumn: Open To Public
+
+		annotation SummarizationSetBy = User
+
+	column Active
+		dataType: int64
+		formatString: 0
+		lineageTag: 138ffabf-6393-42d2-977a-f3a44a45b25a
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = User
+
+	column Alias
+		dataType: string
+		lineageTag: bef11530-932f-4f1c-b17d-ab4f9856ff1e
+		summarizeBy: none
+		sourceColumn: Alias
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Category
+		dataType: int64
+		formatString: 0
+		lineageTag: 0675bec3-297b-4e69-a447-0c612eea0440
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = User
+
+	column CountyCode
+		dataType: int64
+		formatString: 0
+		lineageTag: 846577e9-4b4b-43fc-ae57-493310e7b9e0
+		summarizeBy: none
+		sourceColumn: CountyCode
+
+		annotation SummarizationSetBy = User
+
+	column 'County Name'
+		dataType: string
+		lineageTag: 35277237-954d-4835-a73e-f0e3e68c8abe
+		dataCategory: County
+		summarizeBy: none
+		sourceColumn: County Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation CategorySetBy = User
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Congressional District'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c8ad1cb-3fc5-4c5a-b455-144f94a2a93d
+		summarizeBy: none
+		sourceColumn: Congressional District
+
+		annotation SummarizationSetBy = User
+
+	column Longitude
+		dataType: double
+		lineageTag: 81d3030f-3004-400f-84b1-336e25230cd7
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation CategorySetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Latitude
+		dataType: double
+		lineageTag: b26a4e8b-c207-4c90-bc3e-9da2f5ef5c99
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation CategorySetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	hierarchy Geography
+		lineageTag: 05bbe908-f696-4ec6-819a-65cd1f80ba3e
+
+		level 'State Abr'
+			lineageTag: 91dc56c0-25e6-4bb3-8049-c24e8b885ff3
+			column: 'State Abr'
+
+		level 'County Name'
+			lineageTag: 6613dee5-12d6-4088-a320-0a251eac2a5b
+			column: 'County Name'
+
+		level City
+			lineageTag: ea0854f8-6656-4365-9277-1d531b4dfa63
+			column: City
+
+	hierarchy 'Geography Area'
+		lineageTag: 148a425c-7b3a-4b45-a08d-6b498a9fa2fa
+
+		level 'State Abr'
+			lineageTag: 189b47d2-8909-4a16-8725-a2f4c99c41df
+			column: 'State Abr'
+
+		level 'County Name'
+			lineageTag: a3f82e02-4a94-4701-a61e-51ae486057b6
+			column: 'County Name'
+
+	hierarchy 'ChiefAdministrator Hierarchy'
+		lineageTag: 958f3066-ff58-4313-86a9-47edd36afc5d
+
+		level ChiefAdministrator
+			lineageTag: 6cbf9e8c-1fa0-4e92-898c-d9f661e3154e
+			column: ChiefAdministrator
+
+		level City
+			lineageTag: 42b5cd92-0431-4939-9ca8-3746125b15a7
+			column: City
+
+	partition Institution-f633d8bf-0bda-4d1b-be64-5030e46e327f = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(#"Report Data Source"[ExcelFileLocation]{0}), null, true),
+				    Institution_Sheet = Source{[Item="Institution",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Institution_Sheet),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"InstituteID", Int64.Type}, {"InstituteName", type text}, {"Address", type text}, {"City", type text}, {"StateAbr", type text}, {"PostalCod", type any}, {"FIPS", Int64.Type}, {"GeographicRegion", Int64.Type}, {"ChiefAdministrator", type text}, {"ChiefAdmininistratorTitle", type text}, {"EIN", Int64.Type}, {"Sector", Int64.Type}, {"Level", Int64.Type}, {"Control", Int64.Type}, {"Hospital", Int64.Type}, {"MedicalDegree", Int64.Type}, {"UrbanCentricLocal", Int64.Type}, {"OpenToPublic", Int64.Type}, {"Active", Int64.Type}, {"Alias", type text}, {"Category", Int64.Type}, {"CountyCode", Int64.Type}, {"CountyName", type text}, {"CongressionalDistrict", Int64.Type}, {"Longitude", type number}, {"Latitude", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each ([StateAbr] <> "AS" and [StateAbr] <> "FM" and [StateAbr] <> "GU" and [StateAbr] <> "MH" and [StateAbr] <> "MP" and [StateAbr] <> "PR" and [StateAbr] <> "PW" and [StateAbr] <> "VI")),
+				    #"Renamed Columns" = Table.RenameColumns(#"Filtered Rows",{{"InstituteID", "Institute ID"}, {"InstituteName", "Institute Name"}, {"StateAbr", "State Abr"}, {"PostalCod", "Postal Code"}, {"CountyName", "County Name"}, {"CongressionalDistrict", "Congressional District"}, {"OpenToPublic", "Open To Public"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

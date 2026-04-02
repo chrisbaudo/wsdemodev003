@@ -1,0 +1,56 @@
+table terms
+	lineageTag: 27ec38c5-790e-47d7-9038-281ea00eef57
+	sourceLineageTag: [dbo].[terms]
+
+	column term_id
+		dataType: string
+		lineageTag: 8de7e47d-a20d-4d26-b177-423bc0415f4e
+		sourceLineageTag: term_id
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column term_name
+		dataType: string
+		lineageTag: beb009ad-b326-4016-bacb-2209820e7cb1
+		sourceLineageTag: term_name
+		summarizeBy: none
+		sourceColumn: term_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: string
+		lineageTag: 1f709996-80b8-4581-ab4d-4c80206bc913
+		sourceLineageTag: start_date
+		summarizeBy: none
+		sourceColumn: start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_date
+		dataType: string
+		lineageTag: bc1cd6f2-7cbd-46f9-8ab8-62c82d56afa8
+		sourceLineageTag: end_date
+		summarizeBy: none
+		sourceColumn: end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column instruction_weeks
+		dataType: string
+		lineageTag: b19d8327-56fd-42ce-8194-06ce4ecf4a4c
+		sourceLineageTag: instruction_weeks
+		summarizeBy: none
+		sourceColumn: instruction_weeks
+
+		annotation SummarizationSetBy = Automatic
+
+	partition terms = entity
+		mode: directLake
+		source
+			entityName: terms
+			schemaName: dbo
+			expressionSource: 'DirectLake - EnrollmentSilver'
+

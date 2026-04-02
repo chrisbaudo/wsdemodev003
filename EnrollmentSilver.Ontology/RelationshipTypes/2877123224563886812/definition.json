@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "2877123224563886812",
+  "name": "enrollments_has_students",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "108033089389407"
+  },
+  "target": {
+    "entityTypeId": "123970507166732"
+  }
+}

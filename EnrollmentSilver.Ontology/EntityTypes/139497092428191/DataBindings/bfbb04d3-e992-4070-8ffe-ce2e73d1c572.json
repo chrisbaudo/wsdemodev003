@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "bfbb04d3-e992-4070-8ffe-ce2e73d1c572",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "term_id",
+        "targetPropertyId": "2877024999877473760"
+      },
+      {
+        "sourceColumnName": "term_name",
+        "targetPropertyId": "2877025021153294588"
+      },
+      {
+        "sourceColumnName": "start_date",
+        "targetPropertyId": "2877025045201970741"
+      },
+      {
+        "sourceColumnName": "end_date",
+        "targetPropertyId": "2877025067892713775"
+      },
+      {
+        "sourceColumnName": "instruction_weeks",
+        "targetPropertyId": "2877025090987545563"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "d2a440f4-6d00-4354-9f77-a2fcae66e547",
+      "itemId": "e513c730-c3e9-4ee4-9417-e402e73abdf2",
+      "sourceTableName": "terms",
+      "sourceSchema": "dbo"
+    }
+  }
+}

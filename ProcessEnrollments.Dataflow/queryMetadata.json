@@ -1,0 +1,48 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "ProcessEnrollments",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "1999bb96-a284-482b-ab2b-18d964fd8a0d",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "courses": {
+      "queryId": "7c6c1c85-009f-4cdd-8908-6ca932c16285",
+      "queryName": "courses",
+      "loadEnabled": false
+    },
+    "enrollments": {
+      "queryId": "6cf1c03b-29d5-4355-b301-25e633268827",
+      "queryName": "enrollments",
+      "loadEnabled": false
+    },
+    "students": {
+      "queryId": "04ebbccf-ede0-415d-9909-4b85289de61a",
+      "queryName": "students",
+      "loadEnabled": false
+    },
+    "terms": {
+      "queryId": "8af42d32-5c9a-4464-934a-48050d975da6",
+      "queryName": "terms",
+      "loadEnabled": false
+    },
+    "students_DataDestination": {
+      "queryId": "163dbee3-e522-4e3b-9513-7d1534190302",
+      "queryName": "students_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"02c63c7a-c5ad-487d-9f18-7b204c00954d\",\"DatasourceId\":\"5b1f33be-2b48-4309-97e3-dc78ba0ec0b9\"}"
+    }
+  ]
+}

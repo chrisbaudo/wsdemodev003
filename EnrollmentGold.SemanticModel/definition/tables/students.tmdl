@@ -1,0 +1,213 @@
+table students
+	lineageTag: 47e3bbcf-ef8f-49b2-9640-92d2a60b63fd
+	sourceLineageTag: [dbo].[students]
+
+	/// Calculates the average cumulative GPA for all students in the dataset.
+	measure average_cumulative_gpa = AVERAGE(students[cumulative_gpa])
+		formatString: 0
+		lineageTag: 3063619d-aec3-4025-8f80-29f8f0d366f9
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure max_cumulative_gpa = MAX(students[cumulative_gpa])
+		formatString: 0.00
+		lineageTag: c50a3838-409d-4685-91a7-7ff8a1f5b5a3
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column student_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: b6560bb9-6898-47ac-9ce1-433857baa399
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: c3f21c7c-cafc-4eeb-b7de-a1aa03c151fe
+		sourceLineageTag: first_name
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: aee10748-ba6c-4538-9665-a033fd0a0584
+		sourceLineageTag: last_name
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_of_birth
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: varchar(-1)
+		lineageTag: 6187e07a-da27-4fa3-adaa-13599164952c
+		sourceLineageTag: date_of_birth
+		summarizeBy: none
+		sourceColumn: date_of_birth
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column admit_term
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 9768ffdd-925e-4761-8913-0fa0ec4714b6
+		sourceLineageTag: admit_term
+		summarizeBy: none
+		sourceColumn: admit_term
+
+		annotation SummarizationSetBy = Automatic
+
+	column major
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: f939916f-d8c1-4af5-b58b-6ff869533985
+		sourceLineageTag: major
+		summarizeBy: none
+		sourceColumn: major
+
+		annotation SummarizationSetBy = Automatic
+
+	column class_level
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 14b65d04-2ea9-457a-b2aa-664f3d42f534
+		sourceLineageTag: class_level
+		summarizeBy: none
+		sourceColumn: class_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column residency
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 7afbf6d7-982d-48fe-81f2-6e620b97c799
+		sourceLineageTag: residency
+		summarizeBy: none
+		sourceColumn: residency
+
+		annotation SummarizationSetBy = Automatic
+
+	column pell_eligible
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 97d17477-2e80-4b9c-a947-de8923822530
+		sourceLineageTag: pell_eligible
+		summarizeBy: none
+		sourceColumn: pell_eligible
+
+		annotation SummarizationSetBy = Automatic
+
+	column cumulative_gpa
+		dataType: double
+		sourceProviderType: varchar(-1)
+		lineageTag: 628051e5-52ff-45f8-bf6e-40f09a2f9bd2
+		sourceLineageTag: cumulative_gpa
+		summarizeBy: average
+		sourceColumn: cumulative_gpa
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _ingest_ts
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: bfbe34db-1555-4a27-a8f7-c55c5fccebfd
+		sourceLineageTag: _ingest_ts
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_table
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(-1)
+		lineageTag: d77d69bb-e914-4a77-af46-7fb2d2406302
+		sourceLineageTag: _source_table
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column birth_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a68ffb04-681d-4a3d-846d-aa2d62889a64
+		sourceLineageTag: birth_year
+		summarizeBy: none
+		sourceColumn: birth_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column birth_month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2f827597-9163-4eee-a4d8-ea87a149a994
+		sourceLineageTag: birth_month
+		summarizeBy: none
+		sourceColumn: birth_month
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy date_of_birth_hierarchy
+		lineageTag: a47a3a20-ab6e-4719-a93b-fbaa67cf1dda
+
+		level birth_year
+			lineageTag: de7c02ea-71aa-4a62-a7ca-2d4c554cf743
+			column: birth_year
+
+		level birth_month
+			lineageTag: 1ff21bf4-2ec6-4ca2-b641-1e621f25eebd
+			column: birth_month
+
+		level date_of_birth
+			lineageTag: ad860bb5-2864-4efc-aa34-740ba2e66ccc
+			column: date_of_birth
+
+		changedProperty = Name
+
+	partition students = entity
+		mode: directLake
+		source
+			entityName: students
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

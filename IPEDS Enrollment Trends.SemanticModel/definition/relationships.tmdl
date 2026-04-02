@@ -1,0 +1,57 @@
+relationship 1f827098-4403-4357-b594-4fd3f07ceeff
+	fromColumn: ACT.InstituteID
+	toColumn: Institution.'Institute ID'
+
+relationship 0c0aed9a-02c4-428e-82f0-da4c0a520fdd
+	fromColumn: 'Degrees by Gender'.InstituteID
+	toColumn: Institution.'Institute ID'
+
+relationship 6fcbf6f3-67af-4d78-a1ee-3a7efca8b3b3
+	fromColumn: SAT.InstituteID
+	toColumn: Institution.'Institute ID'
+
+relationship b7ea13bc-bcba-4db1-8448-caa465a6d387
+	fromColumn: ACT.Year
+	toColumn: Date.Year
+
+relationship c25932d9-0f7f-4448-8a38-229d18c84eb1
+	fromColumn: 'Degrees by Gender'.Year
+	toColumn: Date.Year
+
+relationship 95c06228-72ec-4993-a6d5-71661cb895ba
+	fromColumn: SAT.Year
+	toColumn: Date.Year
+
+relationship 4c9697ea-702a-4dee-8a68-93c0074d8756
+	fromColumn: 'Enrollment by Year'.InstituteID
+	toColumn: Institution.'Institute ID'
+
+relationship 36857d52-4f73-4607-952f-f7c2df589da7
+	fromColumn: 'Enrollment by Year'.Year
+	toColumn: Date.Year
+
+relationship adc36d45-83af-481a-b49d-e71b6d94e345
+	crossFilteringBehavior: bothDirections
+	fromColumn: Enrollment.InstituteID
+	toColumn: Institution.'Institute ID'
+
+relationship 8426391a-e6e9-4999-b5cf-dd29e6b31554
+	fromColumn: Enrollment.Year
+	toColumn: Date.Year
+
+relationship f8f29cac-7920-435d-986d-26e2dcc22f6c
+	crossFilteringBehavior: bothDirections
+	fromColumn: Institution.UrbanCentricLocal
+	toColumn: 'Urban Centric'.UrbanCentricLocal
+
+relationship 93f5e8f4-02fb-4e1e-95f0-031104cd4a00
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Institution.'Institute ID'
+	toColumn: 'Institute Logo'.InstituteID
+
+relationship 1a98f44c-b124-4b7c-a0c6-91945ad71cc3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_8d69a910-504d-4b08-87ab-0d9e9f24d80b.Date
+

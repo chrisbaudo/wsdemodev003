@@ -1,0 +1,53 @@
+table Date
+	lineageTag: 9eb45930-0462-4108-b6ec-5d8b93b6e22c
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 93e40a3c-aa89-418c-9036-d309c95281a5
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: 56517144-96b9-43cd-a496-69c2651851b4
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 1a98f44c-b124-4b7c-a0c6-91945ad71cc3
+			defaultHierarchy: LocalDateTable_8d69a910-504d-4b08-87ab-0d9e9f24d80b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition Year-3ac07a65-7502-487f-8119-00bae8dd5b40 = m
+		mode: import
+		source = ```
+				let CreateDateTable = (StartYear as number, EndYear as number) as table =>
+				  let
+				    YearCount = (EndYear-StartYear)+1,
+				    Source = List.Range({0..2100},StartYear,YearCount),
+				    TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),
+				    ChangedType = Table.TransformColumnTypes(TableFromList,{{"Column1", type number}}),
+				    RenamedColumns = Table.RenameColumns(ChangedType,{{"Column1", "Year"}}),
+				    InsertYear = Table.AddColumn(RenamedColumns,"Date", each Date.ToText(#date([Year],01,01)), type date)
+				  in
+				    InsertYear,
+				    #"Invoked FunctionCreateDateTable" = CreateDateTable(2000, 2014),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Invoked FunctionCreateDateTable",{{"Date", type date}}) 
+				in
+				  #"Changed Type"
+				```
+
+	annotation PBI_ResultType = Table
+

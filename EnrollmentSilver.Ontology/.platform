@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Ontology",
+    "displayName": "EnrollmentSilver"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "354620ad-61a7-b145-44db-3bb2ffc942a5"
+  }
+}

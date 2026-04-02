@@ -1,0 +1,516 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "4fd5b487-4345-bfab-4ffd-79d5b2e5c174",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "EnrollmentGold",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "06efb545-0ae2-4125-8fd2-2974d7b64535",
+      "is_selected": true,
+      "display_name": "courses",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "b021189c-10e5-4860-9a23-3fab0b9731b1",
+          "is_selected": true,
+          "display_name": "catalog_nbr",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7e7ff6f1-fac2-44a7-aa3b-59cb053fb716",
+          "is_selected": true,
+          "display_name": "course_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bd071a46-3e1d-41a5-887e-400c3767c26c",
+          "is_selected": true,
+          "display_name": "course_title",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "d6648b77-ca30-4366-979f-52bf3ba09161",
+          "is_selected": true,
+          "display_name": "credits",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b7cfd490-5525-4efc-9126-f84b92fbce94",
+          "is_selected": true,
+          "display_name": "crn",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "db869418-dbec-49b3-8cb1-fbc13c9db4ea",
+          "is_selected": true,
+          "display_name": "instructor",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f53e3f72-4ef7-48fb-9226-595b5a9fff84",
+          "is_selected": true,
+          "display_name": "max_enrollment",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "25be61b1-8dc6-4dbd-8496-80c97503b3b3",
+          "is_selected": true,
+          "display_name": "section",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "da74cd7c-c0ce-460a-9339-5faa1de35a3c",
+          "is_selected": true,
+          "display_name": "subject",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "bb9c480a-5e7f-429d-b30d-44040c7c401f",
+          "is_selected": true,
+          "display_name": "term_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6e2a04f0-01cd-4734-9fb6-ba7995af0cfd",
+      "is_selected": false,
+      "display_name": "date",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "32d1ec63-077a-4ee6-af86-9064184ac31d",
+          "is_selected": true,
+          "display_name": "date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7024b749-7206-441c-a56d-48f6bb1d54f2",
+          "is_selected": true,
+          "display_name": "month_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "66a1c1fb-43c8-4740-bc97-ecbd437271ee",
+          "is_selected": true,
+          "display_name": "month_number",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e1720f1b-f084-4c2a-b83a-c5ce270f5bea",
+          "is_selected": true,
+          "display_name": "quarter",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8c6b660a-7d26-40b4-ae34-f22d19636f14",
+          "is_selected": true,
+          "display_name": "weekday_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e374729f-418a-4743-bd4e-8fdfb09309b2",
+          "is_selected": true,
+          "display_name": "weekday_number",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "72fbd224-85f8-4f9f-abcd-c90e99a2a5ce",
+          "is_selected": true,
+          "display_name": "year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f0c7d441-177e-43f3-a3af-1bb6329ada3f",
+          "is_selected": true,
+          "display_name": "year_month",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1b6a0e0d-dc50-414f-bbba-7019a11dfd76",
+      "is_selected": true,
+      "display_name": "enrollments",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "9b0cc6a8-9a44-408b-ac56-607c2e97f1f8",
+          "is_selected": true,
+          "display_name": "average_quality_points",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": "Calculates the average of the quality points for all records in the enrollments table.",
+          "children": []
+        },
+        {
+          "id": "fc73f1f5-e6c5-4925-ae0a-79fe035b6ac9",
+          "is_selected": true,
+          "display_name": "catalog_nbr",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "089c5ea8-f48e-4bf7-9e8c-01d83fa7b3e7",
+          "is_selected": true,
+          "display_name": "course_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "85c47df2-2fd4-414d-8a53-85afa9e51d82",
+          "is_selected": true,
+          "display_name": "course_title",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "344aa746-308a-4890-9b39-80524c2b425f",
+          "is_selected": true,
+          "display_name": "credits",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a3490df2-89be-4554-b214-5fb91c757ec2",
+          "is_selected": true,
+          "display_name": "crn",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0e1d63ba-a739-4c77-8509-0f13aa4b468c",
+          "is_selected": true,
+          "display_name": "enrollment_status",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "1fdae62d-6d1b-4029-90b6-1ca48e326e4f",
+          "is_selected": true,
+          "display_name": "grade",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "806e433a-2cae-4220-a48a-b9e2cb559ceb",
+          "is_selected": true,
+          "display_name": "quality_points",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e7fac5a4-51d5-43e3-b67f-ae2323c85bef",
+          "is_selected": true,
+          "display_name": "section",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fcd07c96-dc98-41c7-939f-a733bedb8b55",
+          "is_selected": true,
+          "display_name": "student_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ce1c7678-db5f-4581-8610-90bd357f6b1e",
+          "is_selected": true,
+          "display_name": "subject",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ac31d6bb-846f-4d36-8dc4-6452cd5ac4ea",
+          "is_selected": true,
+          "display_name": "term_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f73911a4-c9e6-49ec-be75-33cc0ab1ae68",
+          "is_selected": true,
+          "display_name": "total_quality_points",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": "Calculates the total sum of quality points from the enrollments table.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "47e3bbcf-ef8f-49b2-9640-92d2a60b63fd",
+      "is_selected": true,
+      "display_name": "students",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "9768ffdd-925e-4761-8913-0fa0ec4714b6",
+          "is_selected": true,
+          "display_name": "admit_term",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3063619d-aec3-4025-8f80-29f8f0d366f9",
+          "is_selected": true,
+          "display_name": "average_cumulative_gpa",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": "Calculates the average cumulative GPA for all students in the dataset.",
+          "children": []
+        },
+        {
+          "id": "2f827597-9163-4eee-a4d8-ea87a149a994",
+          "is_selected": true,
+          "display_name": "birth_month",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a68ffb04-681d-4a3d-846d-aa2d62889a64",
+          "is_selected": true,
+          "display_name": "birth_year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "14b65d04-2ea9-457a-b2aa-664f3d42f534",
+          "is_selected": true,
+          "display_name": "class_level",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "628051e5-52ff-45f8-bf6e-40f09a2f9bd2",
+          "is_selected": true,
+          "display_name": "cumulative_gpa",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6187e07a-da27-4fa3-adaa-13599164952c",
+          "is_selected": true,
+          "display_name": "date_of_birth",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c3f21c7c-cafc-4eeb-b7de-a1aa03c151fe",
+          "is_selected": true,
+          "display_name": "first_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "aee10748-ba6c-4538-9665-a033fd0a0584",
+          "is_selected": true,
+          "display_name": "last_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "f939916f-d8c1-4af5-b58b-6ff869533985",
+          "is_selected": true,
+          "display_name": "major",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c50a3838-409d-4685-91a7-7ff8a1f5b5a3",
+          "is_selected": true,
+          "display_name": "max_cumulative_gpa",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "97d17477-2e80-4b9c-a947-de8923822530",
+          "is_selected": true,
+          "display_name": "pell_eligible",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7afbf6d7-982d-48fe-81f2-6e620b97c799",
+          "is_selected": true,
+          "display_name": "residency",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b6560bb9-6898-47ac-9ce1-433857baa399",
+          "is_selected": true,
+          "display_name": "student_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "d9c82cf5-3b9a-4c86-b2d7-f5fe9654c891",
+      "is_selected": true,
+      "display_name": "terms",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "6ea87663-d733-449e-8777-16ec7b82d49e",
+          "is_selected": true,
+          "display_name": "end_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8dd81a63-4892-4afa-b76f-9ab0bec99b22",
+          "is_selected": true,
+          "display_name": "instruction_weeks",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "643ffe88-0fed-4960-8b0f-7d48bf0c644f",
+          "is_selected": true,
+          "display_name": "start_date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4f382dd9-99d7-4af5-a742-f7f9505b4987",
+          "is_selected": true,
+          "display_name": "term_id",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "3cfe8010-6cca-4393-b995-e866d818052d",
+          "is_selected": true,
+          "display_name": "term_name",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}

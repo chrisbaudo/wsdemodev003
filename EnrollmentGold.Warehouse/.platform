@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "EnrollmentGold"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4efcdcfe-00c1-a03e-4c6e-f0f7fbe74428"
+  }
+}

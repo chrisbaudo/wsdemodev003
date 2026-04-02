@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "90f89fa8-5093-4368-be51-e4362f2437c1",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "student_id",
+        "targetPropertyId": "2877024741837130834"
+      },
+      {
+        "sourceColumnName": "first_name",
+        "targetPropertyId": "2877024768822131929"
+      },
+      {
+        "sourceColumnName": "last_name",
+        "targetPropertyId": "2877024788743633087"
+      },
+      {
+        "sourceColumnName": "date_of_birth",
+        "targetPropertyId": "2877024814884313241"
+      },
+      {
+        "sourceColumnName": "admit_term",
+        "targetPropertyId": "2877024835719640626"
+      },
+      {
+        "sourceColumnName": "major",
+        "targetPropertyId": "2877024857109091618"
+      },
+      {
+        "sourceColumnName": "class_level",
+        "targetPropertyId": "2877024883443981832"
+      },
+      {
+        "sourceColumnName": "residency",
+        "targetPropertyId": "2877024903577439789"
+      },
+      {
+        "sourceColumnName": "pell_eligible",
+        "targetPropertyId": "2877024928237986943"
+      },
+      {
+        "sourceColumnName": "cumulative_gpa",
+        "targetPropertyId": "2877024951035534286"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "d2a440f4-6d00-4354-9f77-a2fcae66e547",
+      "itemId": "e513c730-c3e9-4ee4-9417-e402e73abdf2",
+      "sourceTableName": "students",
+      "sourceSchema": "dbo"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+expression 'DirectLake - EnrollmentSilver' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/d2a440f4-6d00-4354-9f77-a2fcae66e547/e513c730-c3e9-4ee4-9417-e402e73abdf2", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 89c2c96f-7086-471b-91b6-592e93b6c698
+
+	annotation PBI_IncludeFutureArtifacts = False
+

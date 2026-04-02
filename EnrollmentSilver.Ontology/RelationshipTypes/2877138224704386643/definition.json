@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/relationshipType/1.0.0/schema.json",
+  "namespace": "usertypes",
+  "id": "2877138224704386643",
+  "name": "enrollments_has_terms",
+  "namespaceType": "Imported",
+  "source": {
+    "entityTypeId": "108033089389407"
+  },
+  "target": {
+    "entityTypeId": "139497092428191"
+  }
+}

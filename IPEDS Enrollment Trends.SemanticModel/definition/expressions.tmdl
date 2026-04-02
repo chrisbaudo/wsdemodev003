@@ -1,0 +1,8 @@
+/// Location of Excel file used as data source for report
+expression ExcelFileLocation = "C:\Data\EDUDemo\HEDataset.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 82c5c3a6-6d6f-4e21-b6d9-32a77698640e
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

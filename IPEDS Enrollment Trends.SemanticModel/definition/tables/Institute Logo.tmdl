@@ -1,0 +1,47 @@
+table 'Institute Logo'
+	lineageTag: e3a1818c-d1c3-47a0-a44f-004b2668d3f7
+
+	column InstituteID
+		isHidden
+		lineageTag: 66013e93-885d-499f-9f87-d252afb91d16
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [InstituteID]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Institute Name'
+		lineageTag: e4aafbb2-cee2-43f8-9fed-455eb2518405
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Institute Name]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Imgage URL'
+		lineageTag: 3cfa10f6-9db3-4637-b8cc-2945d0f52935
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Imgage URL]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition Table-2e6284a3-eb97-430f-ab94-410f742918be = calculated
+		mode: import
+		source =
+				UNION(
+				ROW("InstituteID","209551","Institute Name","University Of Oregon","Imgage URL","http://i1.wp.com/ulpdx.org/wp-content/uploads/2013/07/06-Gold-Sponsor-University-of-Oregon-logo.jpg?resize=337%2C409")
+				,ROW("InstituteID","209542","Institute Name","Oregon State University","Imgage URL", "https://upload.wikimedia.org/wikipedia/en/1/11/Oregon_state_logo.jpg")
+				,ROW("InstituteID","209807","Institute Name","Portland State University","Imgage URL", "http://www.eng.auburn.edu/stars/isis/images/psu_logo.jpg")
+				
+				,ROW("InstituteID","208646","Institute Name","Eastern Oregon University","Imgage URL", "http://www.victorysportsnetwork.com/userdata/Clip/uploads/images/2011-12/eastern-oregon-logo.jpg")
+				,ROW("InstituteID","210429","Institute Name","Western Oregon University","Imgage URL", "http://ormath.mspnet.org/media/layout/project/partner_logo/western_oregon_u.jpg")
+				,ROW("InstituteID","210146","Institute Name","Southern Oregon University","Imgage URL", "http://images.all-free-download.com/images/graphiclarge/southern_oregon_university_1_71989.jpg")
+				)
+

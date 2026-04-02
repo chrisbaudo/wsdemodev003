@@ -1,0 +1,81 @@
+table Enrollment
+	lineageTag: f0e57e26-c3c0-4a7c-8f42-5190ad774a68
+
+	measure 'Average Enrollment' = AVERAGE(Enrollment[Enrollment])
+		formatString: #,0
+		lineageTag: 126ff0a2-38b4-4738-b361-f8c7bc0ac2b3
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'PY Enrollment' = CALCULATE(SUM(Enrollment[Enrollment]),FILTER(ALL('Date'[Year]),'Date'[Year] = (MAX('Date'[Year])-1)))
+		formatString: #,0
+		lineageTag: 78d22d17-5946-49ce-8cc2-92af582bf0d1
+
+	measure 'YOY Enrollment Change %' = IF([CY Enrollment] > 0 && [PY Enrollment] > 0,DIVIDE(([CY Enrollment] - [PY Enrollment]),[PY Enrollment]),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 4d77821d-d438-4138-876e-505452504a73
+
+	measure 'YOY Distance from Enrollment Goal %' = DIVIDE(([YOY Enrollment Change] - [YOY Enrollment Change Goal]),ABS([YOY Enrollment Change Goal]))
+		formatString: 0%;-0%;0%
+		lineageTag: 87c843e0-3c5f-462d-9973-b74a53a0565a
+
+	measure 'CY Enrollment' =
+			
+			CALCULATE(SUM(Enrollment[Enrollment]),FILTER(ALL('Date'[Year]),'Date'[Year] = MAX('Date'[Year])))
+		formatString: #,0
+		lineageTag: ad7a2f73-712d-4351-b484-fc7b15e4ac21
+
+	measure 'YOY Enrollment Change' = IF([CY Enrollment] > 0 && [PY Enrollment] > 0,([CY Enrollment] - [PY Enrollment]),BLANK())
+		formatString: #,0
+		lineageTag: 85c426e5-58a2-4f80-b161-baf6c296b439
+
+	measure 'YOY Enrollment Change Goal' = ([PY Enrollment] * 1.01) - [PY Enrollment]
+		formatString: #,0
+		lineageTag: a20e95be-fbcb-429b-895c-0dcf2b7eb39f
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column InstituteID
+		isHidden
+		formatString: 0
+		lineageTag: 448aad4a-1ae4-4f45-94b9-ebc5a756169a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Enrollment by Year[InstituteID]
+
+		annotation SummarizationSetBy = User
+
+	column InstituteName
+		isHidden
+		lineageTag: 00ff6ea3-be2b-493f-a0cb-396a41c4c701
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Enrollment by Year[InstituteName]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Year
+		isHidden
+		formatString: 0
+		lineageTag: 22f72337-e801-4399-a5a7-cc68648e2dbe
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Enrollment by Year[Year]
+
+		annotation SummarizationSetBy = User
+
+	column Enrollment
+		formatString: #,0
+		lineageTag: 680c540d-b87d-4000-b8e6-2289fd03cd5c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Enrollment by Year[Enrollment]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table-66e94933-4694-4227-9a9d-87993bbf4e25 = calculated
+		mode: import
+		source = FILTER('Enrollment by Year','Enrollment by Year'[InstituteID] = RELATED(Institution[Institute ID]))
+

@@ -1,0 +1,408 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "e73abdf2-e402-9417-4ee4-c3e9e513c730",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "EnrollmentSilver",
+  "type": "lakehouse_tables",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "4e29c8e1-2c68-4661-bb9f-140ffb12a697",
+      "is_selected": false,
+      "display_name": "dbo",
+      "type": "lakehouse_tables.schema",
+      "description": null,
+      "children": [
+        {
+          "id": "6034976c-c502-4dca-8018-4ac34d99f38b",
+          "is_selected": false,
+          "display_name": "courses",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "ac209960-a693-43d0-8863-d72d11d6abdf",
+              "is_selected": true,
+              "display_name": "catalog_nbr",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "72dff259-bc31-4032-874e-543767c849ae",
+              "is_selected": true,
+              "display_name": "course_id",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "ccbff2fe-3cb6-4f21-92c1-e9f8555bbc59",
+              "is_selected": true,
+              "display_name": "course_title",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "5def692a-d365-4c01-a5f5-cd8f0e155195",
+              "is_selected": true,
+              "display_name": "credits",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "a2df5fb5-35f0-4d3e-9b95-b37d5f5ad171",
+              "is_selected": true,
+              "display_name": "crn",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "4ce14b6f-f5e0-4985-8fd3-0cdd5bf01e8f",
+              "is_selected": true,
+              "display_name": "instructor",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "482d23bf-bf36-44ac-8045-1e3c720665b6",
+              "is_selected": true,
+              "display_name": "max_enrollment",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "ea332a60-1067-4896-9232-a252c7359e64",
+              "is_selected": true,
+              "display_name": "section",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "00fa4dde-6c95-4668-ae80-987475a6ce98",
+              "is_selected": true,
+              "display_name": "subject",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "2c7a0d34-e8be-4d4e-872d-430bcf623fbe",
+              "is_selected": true,
+              "display_name": "term_id",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "555b3f6e-542a-46b5-b62e-c650df824ab4",
+          "is_selected": true,
+          "display_name": "enrollments",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "f156bdfc-9768-4e0c-8e54-2d9443002118",
+              "is_selected": true,
+              "display_name": "catalog_nbr",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "caccbf9d-b100-4dc6-b4c5-c564322d7bc2",
+              "is_selected": true,
+              "display_name": "course_id",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "fd23d503-8831-411a-aa54-cd94fe359a8d",
+              "is_selected": true,
+              "display_name": "course_title",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "f2f2d5c7-74a3-46eb-89ca-cc9493c72b37",
+              "is_selected": true,
+              "display_name": "credits",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "def590d8-c7c9-4bd0-a28e-4edf36f5657b",
+              "is_selected": true,
+              "display_name": "crn",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "306be717-6911-4610-bee4-cb135114f80d",
+              "is_selected": true,
+              "display_name": "enrollment_status",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "95d483a9-d30b-468c-9902-1f89dc684611",
+              "is_selected": true,
+              "display_name": "grade",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "ddbbbef4-f774-411f-9594-9b077cea445b",
+              "is_selected": true,
+              "display_name": "quality_points",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "a22be6bf-a2b9-4661-9d19-a0716331f8ac",
+              "is_selected": true,
+              "display_name": "section",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "7a56a421-1978-4004-b402-2450555f2df1",
+              "is_selected": true,
+              "display_name": "student_id",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "68633dfb-5975-4d53-8acb-2c74c44ccc89",
+              "is_selected": true,
+              "display_name": "subject",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "f173fc6e-9004-4be2-bcc9-06242354cd53",
+              "is_selected": true,
+              "display_name": "term_id",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "91d5a9e9-077c-4c53-955c-787ca1d5185b",
+          "is_selected": false,
+          "display_name": "students",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "690a89b2-4637-4322-bfc2-115cdda78681",
+              "is_selected": true,
+              "display_name": "admit_term",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "1d4eb367-5b45-4878-8e3a-dcdafd90460b",
+              "is_selected": true,
+              "display_name": "birth_month",
+              "type": "lakehouse_tables.column",
+              "data_type": "bigint",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "3fe4a969-c0f2-4e87-967a-88338a68fdf7",
+              "is_selected": true,
+              "display_name": "birth_year",
+              "type": "lakehouse_tables.column",
+              "data_type": "bigint",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "768948da-b795-48eb-bdac-7d2e676983ea",
+              "is_selected": true,
+              "display_name": "class_level",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "21837141-2c5d-4e22-b5a2-b95a460f46c2",
+              "is_selected": true,
+              "display_name": "cumulative_gpa",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "61ce9168-42df-4bca-bd59-001ba8b52958",
+              "is_selected": true,
+              "display_name": "date_of_birth",
+              "type": "lakehouse_tables.column",
+              "data_type": "date",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "17641a77-b6fc-418e-abdb-fc287f714f8d",
+              "is_selected": true,
+              "display_name": "first_name",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "28a7167b-4966-4109-a0c3-58752dc8d5f7",
+              "is_selected": true,
+              "display_name": "last_name",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "204e6f6c-2ea3-4326-8239-2c9d49810b62",
+              "is_selected": true,
+              "display_name": "major",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "09a93c9b-b3a0-4e98-8c23-92b974472f1d",
+              "is_selected": true,
+              "display_name": "pell_eligible",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "e4d96770-92d6-4381-9c59-857c3b512107",
+              "is_selected": true,
+              "display_name": "residency",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "8dbd1bee-99be-4228-8862-811f8a08a08a",
+              "is_selected": true,
+              "display_name": "student_id",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ec02e0ae-adcf-442e-846d-9d379cb79ca8",
+          "is_selected": false,
+          "display_name": "terms",
+          "type": "lakehouse_tables.table",
+          "description": null,
+          "children": [
+            {
+              "id": "c293dc3b-90d4-4d56-9c45-412578ec1038",
+              "is_selected": true,
+              "display_name": "end_date",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "13379951-7994-4c53-94d7-59cce310123b",
+              "is_selected": true,
+              "display_name": "instruction_weeks",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "a485322e-c8b1-416d-b952-3726186155ea",
+              "is_selected": true,
+              "display_name": "start_date",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "0b2d49f8-e4c3-4f1a-9e77-18ac677b11a0",
+              "is_selected": true,
+              "display_name": "term_id",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            },
+            {
+              "id": "2aed7608-a232-4850-9015-8e04aa11c109",
+              "is_selected": true,
+              "display_name": "term_name",
+              "type": "lakehouse_tables.column",
+              "data_type": "varchar",
+              "description": null,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+table enrollments
+	lineageTag: 1b6a0e0d-dc50-414f-bbba-7019a11dfd76
+	sourceLineageTag: [dbo].[enrollments]
+
+	/// Calculates the total sum of quality points from the enrollments table.
+	measure total_quality_points = SUM(enrollments[quality_points])
+		formatString: 0
+		lineageTag: f73911a4-c9e6-49ec-be75-33cc0ab1ae68
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+	/// Calculates the average of the quality points for all records in the enrollments table.
+	measure average_quality_points = AVERAGE(enrollments[quality_points])
+		formatString: 0
+		lineageTag: 9b0cc6a8-9a44-408b-ac56-607c2e97f1f8
+
+		changedProperty = Name
+
+		changedProperty = Description
+
+	column term_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: ac31d6bb-846f-4d36-8dc4-6452cd5ac4ea
+		sourceLineageTag: term_id
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: fcd07c96-dc98-41c7-939f-a733bedb8b55
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column crn
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: a3490df2-89be-4554-b214-5fb91c757ec2
+		sourceLineageTag: crn
+		summarizeBy: none
+		sourceColumn: crn
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 089c5ea8-f48e-4bf7-9e8c-01d83fa7b3e7
+		sourceLineageTag: course_id
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column section
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: e7fac5a4-51d5-43e3-b67f-ae2323c85bef
+		sourceLineageTag: section
+		summarizeBy: none
+		sourceColumn: section
+
+		annotation SummarizationSetBy = Automatic
+
+	column subject
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: ce1c7678-db5f-4581-8610-90bd357f6b1e
+		sourceLineageTag: subject
+		summarizeBy: none
+		sourceColumn: subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column catalog_nbr
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: fc73f1f5-e6c5-4925-ae0a-79fe035b6ac9
+		sourceLineageTag: catalog_nbr
+		summarizeBy: none
+		sourceColumn: catalog_nbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_title
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 85c47df2-2fd4-414d-8a53-85afa9e51d82
+		sourceLineageTag: course_title
+		summarizeBy: none
+		sourceColumn: course_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column credits
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 344aa746-308a-4890-9b39-80524c2b425f
+		sourceLineageTag: credits
+		summarizeBy: none
+		sourceColumn: credits
+
+		annotation SummarizationSetBy = Automatic
+
+	column enrollment_status
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 0e1d63ba-a739-4c77-8509-0f13aa4b468c
+		sourceLineageTag: enrollment_status
+		summarizeBy: none
+		sourceColumn: enrollment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 1fdae62d-6d1b-4029-90b6-1ca48e326e4f
+		sourceLineageTag: grade
+		summarizeBy: none
+		sourceColumn: grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column quality_points
+		dataType: int64
+		sourceProviderType: varchar(-1)
+		lineageTag: 806e433a-2cae-4220-a48a-b9e2cb559ceb
+		sourceLineageTag: quality_points
+		summarizeBy: sum
+		sourceColumn: quality_points
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _ingest_ts
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: b4743570-b3f2-480d-8b16-c609480f4361
+		sourceLineageTag: _ingest_ts
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_table
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(-1)
+		lineageTag: 305cb7ba-a867-4543-84de-a24471edd56b
+		sourceLineageTag: _source_table
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enrollments = entity
+		mode: directLake
+		source
+			entityName: enrollments
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

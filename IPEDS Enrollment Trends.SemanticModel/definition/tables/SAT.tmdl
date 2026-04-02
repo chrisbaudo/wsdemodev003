@@ -1,0 +1,109 @@
+table SAT
+	lineageTag: dc93492e-e908-4e38-9d57-79131861acb9
+
+	measure 'PY Students SAT' = CALCULATE(SUM(SAT[Students SAT]),FILTER(ALL('Date'[Year]),'Date'[Year] = (MIN('Date'[Year])-1)))
+		formatString: #,0
+		lineageTag: 60104ebf-1926-490d-9819-949f56cd52b2
+
+	measure 'YOY Students SAT Change' = IF(ISFILTERED('Date'[Year]) && [PY Students SAT] > 0,DIVIDE((SUM(SAT[Students SAT]) - [PY Students SAT]),[PY Students SAT]),BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9987535f-3698-41f2-b85a-fed993951b8c
+
+	column InstituteID
+		dataType: int64
+		formatString: 0
+		lineageTag: f90670a5-bd11-4170-bda8-f8a6ba3a6842
+		summarizeBy: none
+		sourceColumn: InstituteID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InstituteName
+		dataType: string
+		lineageTag: cd690f1a-4234-49bc-89e8-a2caf7136ee8
+		summarizeBy: none
+		sourceColumn: InstituteName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'SAT I Verbal 25th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 10f1dc8e-c58e-499c-8e1b-4b546a3bba2f
+		summarizeBy: average
+		sourceColumn: SAT I Verbal 25th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'SAT I Verbal 75th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 279f0c13-79ac-42fe-b540-eb5f60421a31
+		summarizeBy: average
+		sourceColumn: SAT I Verbal 75th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'SAT I Math 25th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 3dddff6d-51e8-4cb9-8f14-ef7f544846a2
+		summarizeBy: average
+		sourceColumn: SAT I Math 25th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'SAT I Math 75th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: bd4eb8a0-a498-4a15-93e1-85c243a307ba
+		summarizeBy: average
+		sourceColumn: SAT I Math 75th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'Students SAT'
+		dataType: int64
+		formatString: #,0
+		lineageTag: e1959037-7585-4d1d-9a26-7f235fc09189
+		summarizeBy: sum
+		sourceColumn: Students SAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Percent Students SAT'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 657d623b-3dd7-4acd-9280-3c1fce978da9
+		summarizeBy: average
+		sourceColumn: Percent Students SAT
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 267908e0-d9a3-4475-9ec2-66045f07ac33
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SATScore-81e51abc-6151-434f-a4fc-10334a63e2c2 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(#"Report Data Source"[ExcelFileLocation]{0}), null, true),
+				    SATScore_Sheet = Source{[Item="SATScore",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(SATScore_Sheet),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SAT I Verbal 25th Percentile", type text}, {"SAT I Verbal 75th Percentile", type text}, {"SAT I Math 25th Percentile", type text}, {"SAT I Math 75th Percentile", type text}, {"Students submitting SAT scores Number", type text}, {"Students submitting SAT scores Percent", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","-","0",Replacer.ReplaceText,{"SAT I Verbal 25th Percentile", "SAT I Verbal 75th Percentile", "SAT I Math 25th Percentile", "SAT I Math 75th Percentile", "Students submitting SAT scores Number", "Students submitting SAT scores Percent"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Students submitting SAT scores Percent", type number}, {"Students submitting SAT scores Number", Int64.Type}, {"SAT I Math 75th Percentile", Int64.Type}, {"SAT I Math 25th Percentile", Int64.Type}, {"SAT I Verbal 75th Percentile", Int64.Type}, {"SAT I Verbal 25th Percentile", Int64.Type}, {"Year", Int64.Type}, {"InstituteID", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Students submitting SAT scores Number", "Students SAT"}, {"Students submitting SAT scores Percent", "Percent Students SAT"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

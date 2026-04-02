@@ -1,0 +1,27 @@
+table 'Report Data Source'
+	isHidden
+	lineageTag: a4e84baa-ae6b-417a-94a7-b23d08408ad5
+
+	column ExcelFileLocation
+		dataType: string
+		lineageTag: b8091337-0ca0-416c-bd38-b426bfb25134
+		summarizeBy: none
+		sourceColumn: ExcelFileLocation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition ReportDataSource-62649a25-b59c-4ebd-8a5c-2d7c2f43a1b2 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcraKiXFJLEmMiXF1CXVJzc2PifFwBQkUp5boVeQUVyjFxgIA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [ExcelFileLocation = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"ExcelFileLocation", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

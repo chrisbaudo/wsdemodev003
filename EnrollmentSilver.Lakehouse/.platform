@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "EnrollmentSilver"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e73abdf2-e402-9417-4ee4-c3e9e513c730"
+  }
+}

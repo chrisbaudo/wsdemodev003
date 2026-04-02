@@ -1,0 +1,101 @@
+table courses
+	lineageTag: 2043ddec-3297-4e0f-ad21-2b090fab3105
+	sourceLineageTag: [dbo].[courses]
+
+	column term_id
+		dataType: string
+		lineageTag: 12c1aa58-46e5-4515-938c-8be9f00fe01d
+		sourceLineageTag: term_id
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		lineageTag: 4e4acb9c-c2a5-4f47-8e9e-36c2958e8b38
+		sourceLineageTag: course_id
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column section
+		dataType: string
+		lineageTag: 581c592f-491d-47b4-b397-03375e118aba
+		sourceLineageTag: section
+		summarizeBy: none
+		sourceColumn: section
+
+		annotation SummarizationSetBy = Automatic
+
+	column crn
+		dataType: string
+		lineageTag: f0947a57-a73f-420c-84e4-ef45e8986dce
+		sourceLineageTag: crn
+		summarizeBy: none
+		sourceColumn: crn
+
+		annotation SummarizationSetBy = Automatic
+
+	column subject
+		dataType: string
+		lineageTag: 717732ce-cafa-496c-88e6-b21565508c9a
+		sourceLineageTag: subject
+		summarizeBy: none
+		sourceColumn: subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column catalog_nbr
+		dataType: string
+		lineageTag: 875a7865-3e8a-4a0b-ae3b-9ed11a0b3ab5
+		sourceLineageTag: catalog_nbr
+		summarizeBy: none
+		sourceColumn: catalog_nbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_title
+		dataType: string
+		lineageTag: cb653b94-33c9-4817-bd4a-76548cc06443
+		sourceLineageTag: course_title
+		summarizeBy: none
+		sourceColumn: course_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column credits
+		dataType: string
+		lineageTag: 6e473826-33ea-4d0e-a7ea-d1e7466eca2b
+		sourceLineageTag: credits
+		summarizeBy: none
+		sourceColumn: credits
+
+		annotation SummarizationSetBy = Automatic
+
+	column instructor
+		dataType: string
+		lineageTag: c091192d-e078-4e9b-a2da-debe0ee606da
+		sourceLineageTag: instructor
+		summarizeBy: none
+		sourceColumn: instructor
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_enrollment
+		dataType: string
+		lineageTag: 37e3cdc3-cacc-433f-a7d2-a2d8fe8aab52
+		sourceLineageTag: max_enrollment
+		summarizeBy: none
+		sourceColumn: max_enrollment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition courses = entity
+		mode: directLake
+		source
+			entityName: courses
+			schemaName: dbo
+			expressionSource: 'DirectLake - EnrollmentSilver'
+

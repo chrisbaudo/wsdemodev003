@@ -1,0 +1,140 @@
+table courses
+	lineageTag: 06efb545-0ae2-4125-8fd2-2974d7b64535
+	sourceLineageTag: [dbo].[courses]
+
+	column term_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: bb9c480a-5e7f-429d-b30d-44040c7c401f
+		sourceLineageTag: term_id
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 7e7ff6f1-fac2-44a7-aa3b-59cb053fb716
+		sourceLineageTag: course_id
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column section
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 25be61b1-8dc6-4dbd-8496-80c97503b3b3
+		sourceLineageTag: section
+		summarizeBy: none
+		sourceColumn: section
+
+		annotation SummarizationSetBy = Automatic
+
+	column crn
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: b7cfd490-5525-4efc-9126-f84b92fbce94
+		sourceLineageTag: crn
+		summarizeBy: none
+		sourceColumn: crn
+
+		annotation SummarizationSetBy = Automatic
+
+	column subject
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: da74cd7c-c0ce-460a-9339-5faa1de35a3c
+		sourceLineageTag: subject
+		summarizeBy: none
+		sourceColumn: subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column catalog_nbr
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: b021189c-10e5-4860-9a23-3fab0b9731b1
+		sourceLineageTag: catalog_nbr
+		summarizeBy: none
+		sourceColumn: catalog_nbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_title
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: bd071a46-3e1d-41a5-887e-400c3767c26c
+		sourceLineageTag: course_title
+		summarizeBy: none
+		sourceColumn: course_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column credits
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: d6648b77-ca30-4366-979f-52bf3ba09161
+		sourceLineageTag: credits
+		summarizeBy: none
+		sourceColumn: credits
+
+		annotation SummarizationSetBy = Automatic
+
+	column instructor
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: db869418-dbec-49b3-8cb1-fbc13c9db4ea
+		sourceLineageTag: instructor
+		summarizeBy: none
+		sourceColumn: instructor
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_enrollment
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: f53e3f72-4ef7-48fb-9226-595b5a9fff84
+		sourceLineageTag: max_enrollment
+		summarizeBy: none
+		sourceColumn: max_enrollment
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ingest_ts
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 9b75eea6-2972-4c44-a42a-1a154aa3d57c
+		sourceLineageTag: _ingest_ts
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_table
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(-1)
+		lineageTag: 4f198897-f250-42b2-8dfa-a64adcee8156
+		sourceLineageTag: _source_table
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition courses = entity
+		mode: directLake
+		source
+			entityName: courses
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

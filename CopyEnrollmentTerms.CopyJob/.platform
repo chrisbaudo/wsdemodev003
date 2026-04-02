@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "CopyJob",
+    "displayName": "CopyEnrollmentTerms"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "326f4234-8532-993f-4e8b-ed6df175f834"
+  }
+}

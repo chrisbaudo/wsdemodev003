@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "EnrollmentSilver"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "29c04d5f-e739-80de-4ab6-071973dd1192"
+  }
+}

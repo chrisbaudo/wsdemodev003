@@ -1,0 +1,13 @@
+relationship f49886c7-9b45-51c2-1343-11caaaff7e86
+	fromColumn: enrollments.student_id
+	toColumn: students.student_id
+
+relationship 09e6a9ef-3a56-071d-f7ee-82ae3c603a87
+	fromColumn: enrollments.term_id
+	toColumn: terms.term_id
+
+relationship e523379f-c74b-6310-286e-69d5b79a91e1
+	isActive: false
+	fromColumn: enrollments.crn
+	toColumn: courses.crn
+

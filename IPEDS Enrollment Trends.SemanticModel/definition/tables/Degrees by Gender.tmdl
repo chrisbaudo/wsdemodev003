@@ -1,0 +1,137 @@
+table 'Degrees by Gender'
+	lineageTag: 6156c995-392c-4dd0-bdff-54955397ba60
+
+	measure 'Percent Degrees Women' = DIVIDE(SUM('Degrees by Gender'[Women Degrees]),SUM('Degrees by Gender'[Degrees]))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a240d013-58a6-4b94-86e8-90214a83c4b4
+
+	measure 'Percent Degrees Men' = DIVIDE(SUM('Degrees by Gender'[Men Degrees]),SUM('Degrees by Gender'[Degrees]))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ee0a1527-eff9-4cea-901a-6d51ab83b1ea
+
+	measure 'Percent Degree Type of Total' = DIVIDE(SUM('Degrees by Gender'[Degrees]),CALCULATE(SUM('Degrees by Gender'[Degrees]),ALL('Degrees by Gender')))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e34211dd-a389-4ac8-bdcf-692354f22ff2
+
+	measure 'PY Degrees' = CALCULATE(SUM('Degrees by Gender'[Degrees]),FILTER(ALL('Date'[Year]),'Date'[Year] = (MAX('Date'[Year])-1)))
+		formatString: #,0
+		lineageTag: 1fb7be96-4329-410e-af04-7bcb78b392d9
+
+	measure 'YOY Degrees Change %' = IF([CY Degrees] > 0 && [PY Degrees] > 0,DIVIDE(([CY Degrees] - [PY Degrees]),[PY Degrees]),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e9e74841-14b0-4b14-935c-8d041295e613
+
+	measure 'Degrees Most Recent Year' = CALCULATE(sum('Degrees by Gender'[Degrees]),FILTER('Date','Date'[Year] = MAX('Date'[Year])))
+		formatString: 0
+		lineageTag: 12533028-4600-4546-a73b-1d0344a2a1ea
+
+	measure 'CY Degrees' = CALCULATE(SUM('Degrees by Gender'[Degrees]),FILTER(ALL('Date'[Year]),'Date'[Year] = MAX('Date'[Year])))
+		formatString: #,0
+		lineageTag: 524786f9-188c-454f-b788-0b1e4bd40388
+
+	measure 'Average Degrees' = DIVIDE(SUM('Degrees by Gender'[Degrees]),COUNTROWS(VALUES('Degrees by Gender'[Year])))
+		formatString: #,0
+		lineageTag: f6f8347f-dd5d-4736-993e-1f903b85f7f5
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column InstituteID
+		dataType: int64
+		formatString: 0
+		lineageTag: 21a2f4dc-f964-4d79-b3ed-1e749c239100
+		summarizeBy: none
+		sourceColumn: InstituteID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InstituteName
+		dataType: string
+		lineageTag: 1a2460cd-2c66-4707-91fe-761ea4a407fc
+		summarizeBy: none
+		sourceColumn: InstituteName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 21e664f4-c1ad-42c0-aed3-53b9bb19d27b
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Degree Description'
+		dataType: string
+		lineageTag: c8a555a4-06b0-4e79-a578-dcd07d1cf2b7
+		summarizeBy: none
+		sourceColumn: Degree Description
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Degrees
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5985bd65-8493-4031-b3d4-c690e3464447
+		summarizeBy: sum
+		sourceColumn: Degrees
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Men Degrees'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 155e66ba-2519-4d76-aef2-189be7926d2b
+		summarizeBy: sum
+		sourceColumn: Men Degrees
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Women Degrees'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 54cddcf4-12d6-461d-9730-46bb5327f80f
+		summarizeBy: sum
+		sourceColumn: Women Degrees
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Degree Type' = LEFT('Degrees by Gender'[Degree Description],FIND(" ",'Degrees by Gender'[Degree Description])-3)
+		lineageTag: b9f0b03b-b9f3-402a-8cfb-6d5fafa9586a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	hierarchy 'Degree Hierarchy'
+		lineageTag: f4c6effb-435f-4f78-8aa0-9e1e4b24c532
+
+		level 'Degree Type'
+			lineageTag: 7d4a92dc-2968-41a3-9475-adef154ac81a
+			column: 'Degree Type'
+
+		level 'Degree Description'
+			lineageTag: 5f855e05-c1dc-4019-bb71-9dc921c9eac8
+			column: 'Degree Description'
+
+	partition DegreesByGender-46cdd510-e7d7-4144-9d29-90150065d2f0 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(#"Report Data Source"[ExcelFileLocation]{0}), null, true),
+				    DegreesByGender_Sheet = Source{[Item="DegreesByGender",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(DegreesByGender_Sheet),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"InstituteID", Int64.Type}, {"InstituteName", type text}, {"Year", Int64.Type}, {" Level", type text}, {"Total", Int64.Type}, {"Men Number", Int64.Type}, {"Women Number", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Total", "Degrees"}, {"Men Number", "Men Degrees"}, {"Women Number", "Women Degrees"}, {" Level", "Level"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed Columns", each ([Level] = "Associate's degree" or [Level] = "Bachelor's degree" or [Level] = "Doctor's degree - other" or [Level] = "Doctor's degree - other (new degree classification)" or [Level] = "Doctor's degree - professional practice" or [Level] = "Doctor's degree - professional practice (new degree classification)" or [Level] = "Doctor's degree - research/scholarship" or [Level] = "Doctor's degree - research/scholarship (new degree classification)" or [Level] = "Master's degree")),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Filtered Rows",{{"Level", "Degree Description"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "IPEDS Enrollment Trends"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "14e3d54f-69a5-96f2-4cc2-685959ecc7c6"
+  }
+}

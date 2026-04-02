@@ -1,0 +1,48 @@
+table 'Urban Centric'
+	lineageTag: 539ccad3-651d-49bf-bf32-652fe1a40cee
+
+	column UrbanCentricLocal
+		dataType: string
+		lineageTag: 5c02a01b-949f-4f04-b161-20e1736ded07
+		summarizeBy: none
+		sourceColumn: UrbanCentricLocal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column UrbanCentricCategory
+		dataType: string
+		lineageTag: 8022d941-8ef5-47a8-9021-92375f98bf65
+		summarizeBy: none
+		sourceColumn: UrbanCentricCategory
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Urban Category'
+		dataType: string
+		lineageTag: 62b73a71-bc90-417c-80b2-d625448ad077
+		summarizeBy: none
+		sourceColumn: Urban Category
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition UrbanCentric-dd407956-1987-45d9-a8e5-65a6da4119ab = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(#"Report Data Source"[ExcelFileLocation]{0}), null, true),
+				    Year_Sheet = Source{[Item="UrbanCentric",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Year_Sheet),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Promoted Headers", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Removed Blank Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,129 @@
+table ACT
+	lineageTag: 4aab3232-786f-4859-a184-29ba3fb9caa6
+
+	measure 'PY Students ACT' = CALCULATE(SUM(ACT[Students ACT]),FILTER(ALL('Date'[Year]),'Date'[Year] = (MIN('Date'[Year])-1)))
+		formatString: #,0
+		lineageTag: 2be5bcf5-1247-4ea7-be10-896a89ad1715
+
+	measure 'YOY Students ACT Change' = IF(ISFILTERED('Date'[Year]) && [PY Students ACT] > 0,DIVIDE((SUM(ACT[Students ACT]) - [PY Students ACT]),[PY Students ACT]),BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e297ab43-06ba-4319-b2fe-4c8aecc2acf1
+
+	column InstituteID
+		dataType: int64
+		formatString: 0
+		lineageTag: aaefa817-985b-415d-8a7a-9517d40016dc
+		summarizeBy: none
+		sourceColumn: InstituteID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InstituteName
+		dataType: string
+		lineageTag: a3aced56-965b-408a-adce-0a3d867a1a6d
+		summarizeBy: none
+		sourceColumn: InstituteName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'ACT Composite 25th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: dde655f2-a077-4e2c-8321-338d68a90871
+		summarizeBy: average
+		sourceColumn: ACT Composite 25th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'ACT Composite 75th Percentile'
+		dataType: int64
+		formatString: 0
+		lineageTag: a4ac9a54-ae53-4c47-be7f-ece9e670d004
+		summarizeBy: average
+		sourceColumn: ACT Composite 75th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'ACT English 25th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: f3de088a-85fc-4e1e-b3f2-6bfe4e9063db
+		summarizeBy: average
+		sourceColumn: ACT English 25th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'ACT English 75th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: bbfdcfe5-9914-491e-bb73-9d6d8f1b5fa6
+		summarizeBy: average
+		sourceColumn: ACT English 75th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'ACT Math 25th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: bba48ad7-c266-4cba-b96e-17d518aa44c7
+		summarizeBy: average
+		sourceColumn: ACT Math 25th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'ACT Math 75th Percentile'
+		dataType: int64
+		formatString: #,0
+		lineageTag: aa1beb27-81ff-4048-a8bb-2d068ced8844
+		summarizeBy: average
+		sourceColumn: ACT Math 75th Percentile
+
+		annotation SummarizationSetBy = User
+
+	column 'Students ACT'
+		dataType: int64
+		formatString: #,0
+		lineageTag: b94f7ddc-de6d-4e8a-ad84-99a224364dbe
+		summarizeBy: sum
+		sourceColumn: Students ACT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Percent Students ACT'
+		dataType: double
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e4b8557c-c396-4ec3-b3e0-c463f5609beb
+		summarizeBy: average
+		sourceColumn: Percent Students ACT
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 63cfc93d-345f-436d-b8e6-c7ab5775d7d3
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ACTScore-9a782588-19c8-47fe-af86-cf5cd5613653 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(ExcelFileLocation), null, true),
+				    ACTScore_Sheet = Source{[Item="ACTScore",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(ACTScore_Sheet),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"InstituteID", Int64.Type}, {"InstituteName", type text}, {"ACT Composite 25th Percentile", type text}, {"ACT Composite 75th Percentile", type text}, {"ACT English 25th Percentile", type text}, {"ACT English 75th Percentile", type text}, {"ACT Math 25th Percentile", type text}, {"ACT Math 75th Percentile", type text}, {"Students submitting ACT scores Number", type text}, {"Students submitting ACT scores Percent", type text}, {"Year", Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","-","0",Replacer.ReplaceText,{"ACT Composite 25th Percentile", "ACT Composite 75th Percentile", "ACT English 25th Percentile", "ACT English 75th Percentile", "ACT Math 25th Percentile", "ACT Math 75th Percentile", "Students submitting ACT scores Number", "Students submitting ACT scores Percent"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value",{{"Students submitting ACT scores Percent", type number}, {"Students submitting ACT scores Number", Int64.Type}, {"ACT Math 75th Percentile", Int64.Type}, {"ACT Math 25th Percentile", Int64.Type}, {"ACT English 75th Percentile", Int64.Type}, {"ACT English 25th Percentile", Int64.Type}, {"ACT Composite 75th Percentile", Int64.Type}, {"ACT Composite 25th Percentile", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"Students submitting ACT scores Number", "Students ACT"}, {"Students submitting ACT scores Percent", "Percent Students ACT"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

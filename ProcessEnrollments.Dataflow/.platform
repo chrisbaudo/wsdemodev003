@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "ProcessEnrollments"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d801b064-a530-ab14-452f-7f9b46136e04"
+  }
+}

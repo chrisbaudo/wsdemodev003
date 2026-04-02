@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "953ae32e-fcee-4b78-8728-1fa54e5da989",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "term_id",
+        "targetPropertyId": "2877024391150708309"
+      },
+      {
+        "sourceColumnName": "student_id",
+        "targetPropertyId": "2877024413761813041"
+      },
+      {
+        "sourceColumnName": "crn",
+        "targetPropertyId": "2877024441324508791"
+      },
+      {
+        "sourceColumnName": "course_id",
+        "targetPropertyId": "2877024461611266402"
+      },
+      {
+        "sourceColumnName": "section",
+        "targetPropertyId": "2877024488860218611"
+      },
+      {
+        "sourceColumnName": "subject",
+        "targetPropertyId": "2877024516101499691"
+      },
+      {
+        "sourceColumnName": "catalog_nbr",
+        "targetPropertyId": "2877024533817739739"
+      },
+      {
+        "sourceColumnName": "course_title",
+        "targetPropertyId": "2877024559166991025"
+      },
+      {
+        "sourceColumnName": "credits",
+        "targetPropertyId": "2877024582885134334"
+      },
+      {
+        "sourceColumnName": "enrollment_status",
+        "targetPropertyId": "2877024603685161971"
+      },
+      {
+        "sourceColumnName": "grade",
+        "targetPropertyId": "2877024630845474032"
+      },
+      {
+        "sourceColumnName": "quality_points",
+        "targetPropertyId": "2877024653135624265"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "d2a440f4-6d00-4354-9f77-a2fcae66e547",
+      "itemId": "e513c730-c3e9-4ee4-9417-e402e73abdf2",
+      "sourceTableName": "enrollments",
+      "sourceSchema": "dbo"
+    }
+  }
+}
