@@ -31,8 +31,26 @@
       "queryName": "terms",
       "loadEnabled": false
     },
+    "enrollments_DataDestination": {
+      "queryId": "3e1bb60b-81e3-480a-9138-5244cb3ba46b",
+      "queryName": "enrollments_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "terms_DataDestination": {
+      "queryId": "42e15d8a-65a7-435f-b7c0-b3ab1f2fe674",
+      "queryName": "terms_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "courses_DataDestination": {
+      "queryId": "677b43d9-5c9b-44fb-9471-0426ccafba44",
+      "queryName": "courses_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
     "students_DataDestination": {
-      "queryId": "163dbee3-e522-4e3b-9513-7d1534190302",
+      "queryId": "4adb9476-8ba2-4619-8a47-3600caff0ad9",
       "queryName": "students_DataDestination",
       "isHidden": true,
       "loadEnabled": false

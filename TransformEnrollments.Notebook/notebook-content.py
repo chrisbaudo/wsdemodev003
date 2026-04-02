@@ -35,6 +35,16 @@
 
 # CELL ********************
 
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 # -------------------------------------------------------------------
 # PARAMETERS — set these for your environment
 # -------------------------------------------------------------------
