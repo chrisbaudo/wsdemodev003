@@ -110,6 +110,15 @@ table enrollments
 
 		annotation SummarizationSetBy = Automatic
 
+	column term_id_crn
+		dataType: string
+		lineageTag: c0d8a761-5198-42bf-8ec0-30f8d5c8555f
+		sourceLineageTag: term_id_crn
+		summarizeBy: none
+		sourceColumn: term_id_crn
+
+		annotation SummarizationSetBy = Automatic
+
 	partition enrollments = entity
 		mode: directLake
 		source

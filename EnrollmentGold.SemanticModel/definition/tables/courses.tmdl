@@ -1,11 +1,11 @@
 table courses
-	lineageTag: 06efb545-0ae2-4125-8fd2-2974d7b64535
+	lineageTag: 67aef59b-8dfe-45de-99f4-e3d6695f3346
 	sourceLineageTag: [dbo].[courses]
 
 	column term_id
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: bb9c480a-5e7f-429d-b30d-44040c7c401f
+		lineageTag: b1a8ed1b-fc67-46d1-896e-a2df55b4076f
 		sourceLineageTag: term_id
 		summarizeBy: none
 		sourceColumn: term_id
@@ -15,7 +15,7 @@ table courses
 	column course_id
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: 7e7ff6f1-fac2-44a7-aa3b-59cb053fb716
+		lineageTag: aedc176b-b29b-4766-a24c-a433b5ef9244
 		sourceLineageTag: course_id
 		summarizeBy: none
 		sourceColumn: course_id
@@ -25,7 +25,7 @@ table courses
 	column section
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: 25be61b1-8dc6-4dbd-8496-80c97503b3b3
+		lineageTag: 27c304cd-e98c-49a1-8ae2-44414ffe73e7
 		sourceLineageTag: section
 		summarizeBy: none
 		sourceColumn: section
@@ -35,7 +35,7 @@ table courses
 	column crn
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: b7cfd490-5525-4efc-9126-f84b92fbce94
+		lineageTag: d1bbadaa-eb70-471e-8078-e112cf3acc62
 		sourceLineageTag: crn
 		summarizeBy: none
 		sourceColumn: crn
@@ -45,7 +45,7 @@ table courses
 	column subject
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: da74cd7c-c0ce-460a-9339-5faa1de35a3c
+		lineageTag: f978f4ce-a506-46b3-af4b-f97b32c05080
 		sourceLineageTag: subject
 		summarizeBy: none
 		sourceColumn: subject
@@ -55,7 +55,7 @@ table courses
 	column catalog_nbr
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: b021189c-10e5-4860-9a23-3fab0b9731b1
+		lineageTag: b6185542-63de-4d9f-941f-92ac3763ad40
 		sourceLineageTag: catalog_nbr
 		summarizeBy: none
 		sourceColumn: catalog_nbr
@@ -65,7 +65,7 @@ table courses
 	column course_title
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: bd071a46-3e1d-41a5-887e-400c3767c26c
+		lineageTag: 389a3bc7-59d8-4ac2-8a0b-dc75ffe07a9f
 		sourceLineageTag: course_title
 		summarizeBy: none
 		sourceColumn: course_title
@@ -75,7 +75,7 @@ table courses
 	column credits
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: d6648b77-ca30-4366-979f-52bf3ba09161
+		lineageTag: 4cd80626-7988-4dc8-a0d7-6b326de4e72d
 		sourceLineageTag: credits
 		summarizeBy: none
 		sourceColumn: credits
@@ -85,7 +85,7 @@ table courses
 	column instructor
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: db869418-dbec-49b3-8cb1-fbc13c9db4ea
+		lineageTag: de1f44fb-09f1-4401-a2d0-aed7ff72388a
 		sourceLineageTag: instructor
 		summarizeBy: none
 		sourceColumn: instructor
@@ -95,7 +95,7 @@ table courses
 	column max_enrollment
 		dataType: string
 		sourceProviderType: varchar(-1)
-		lineageTag: f53e3f72-4ef7-48fb-9226-595b5a9fff84
+		lineageTag: 5eff6cc3-17ba-4ba1-9a6a-9baa27b66133
 		sourceLineageTag: max_enrollment
 		summarizeBy: none
 		sourceColumn: max_enrollment
@@ -104,28 +104,32 @@ table courses
 
 	column _ingest_ts
 		dataType: dateTime
-		isHidden
 		formatString: General Date
 		sourceProviderType: datetime2
-		lineageTag: 9b75eea6-2972-4c44-a42a-1a154aa3d57c
+		lineageTag: d97dc0ea-cd59-4c1c-a57a-066169775b4a
 		sourceLineageTag: _ingest_ts
 		summarizeBy: none
 		sourceColumn: _ingest_ts
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column _source_table
 		dataType: string
-		isHidden
 		sourceProviderType: varchar(-1)
-		lineageTag: 4f198897-f250-42b2-8dfa-a64adcee8156
+		lineageTag: c477d84c-2720-4997-a208-77a63978cd95
 		sourceLineageTag: _source_table
 		summarizeBy: none
 		sourceColumn: _source_table
 
-		changedProperty = IsHidden
+		annotation SummarizationSetBy = Automatic
+
+	column term_id_crn
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 8b0530ef-edc8-40c3-93a9-2c0c863e52c4
+		sourceLineageTag: term_id_crn
+		summarizeBy: none
+		sourceColumn: term_id_crn
 
 		annotation SummarizationSetBy = Automatic
 

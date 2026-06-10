@@ -120,6 +120,7 @@ table students
 
 	column cumulative_gpa
 		dataType: double
+		formatString: 0.00
 		sourceProviderType: varchar(-1)
 		lineageTag: 628051e5-52ff-45f8-bf6e-40f09a2f9bd2
 		sourceLineageTag: cumulative_gpa
@@ -133,8 +134,6 @@ table students
 		changedProperty = SummarizeBy
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column _ingest_ts
 		dataType: dateTime

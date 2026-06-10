@@ -92,6 +92,18 @@ from pyspark.sql.window import Window
 
 errors = []
 
+def sync_warehouse_schema(df, warehouse_name, schema_name, table_name, spark):
+    # 1. Get current Warehouse columns (use SQL connector, example below for Spark SQL)
+    warehouse_cols = [f.name.lower() for f in spark.read.synapsesql(f"{warehouse_name}.{schema_name}.{table_name}").schema.fields]
+    # 2. Get DataFrame columns
+    df_cols = [c.lower() for c in df.columns]
+    # 3. Find new columns in the DataFrame
+    new_columns = [c for c in df_cols if c not in warehouse_cols]
+    for col in new_columns:
+        # Example: treat all new columns as STRING—you should derive types better in production!
+        alter_sql = f'ALTER TABLE {warehouse_name}.{schema_name}.{table_name} ADD [{col}] VARCHAR(MAX);'
+        spark.sql(alter_sql)
+
 for t in tables_to_process:
     source_fqn   = f"{current_db}.{t.name}"   # Lakehouse catalog reference
     target_table = f"{TABLE_NAME_PREFIX}{t.name}"  # Warehouse table name
@@ -110,6 +122,9 @@ for t in tables_to_process:
         # 3) WRITE to Warehouse via connector
         #    Uses synapsesql("<Warehouse>.<schema>.<table>")
         target_fqn = f"{WAREHOUSE_NAME}.{TARGET_SCHEMA}.{target_table}"
+        # ATTENTION: AI-generated code can include errors or operations you didn't intend. Review the code in this cell carefully before running it.
+
+        sync_warehouse_schema(df_transformed, WAREHOUSE_NAME, TARGET_SCHEMA, target_table, spark)
         df_transformed.write.mode("overwrite").synapsesql(target_fqn) # this uses default mode - errorifexists
 
         print(f"Loaded Warehouse table '{t.name}' -> Warehouse '{target_fqn}'")

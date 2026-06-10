@@ -82,5 +82,6 @@
       "valueType": "String"
     }
   ],
-  "timeseriesProperties": []
+  "timeseriesProperties": [],
+  "untypedProperties": []
 }

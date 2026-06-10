@@ -1,7 +1,3 @@
-relationship f5f66b23-53e3-8f6d-3dd9-b2a16f58716c
-	fromColumn: enrollments.crn
-	toColumn: courses.crn
-
 relationship dedc65f2-fafb-7bd1-fa33-9cec6cd30d9e
 	fromColumn: enrollments.student_id
 	toColumn: students.student_id
@@ -9,4 +5,8 @@ relationship dedc65f2-fafb-7bd1-fa33-9cec6cd30d9e
 relationship 63c6ee54-ce28-3712-80ec-740786f1ae30
 	fromColumn: enrollments.term_id
 	toColumn: terms.term_id
+
+relationship aa8d5f4e-342b-fb9b-5514-579cdadf5c3a
+	fromColumn: enrollments.term_id_crn
+	toColumn: courses.term_id_crn
 

@@ -1,0 +1,13 @@
+expression 'DirectQuery to AS - EnrollmentGold' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/wsdemodev003", "EnrollmentGold"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 16eda38e-97b9-411e-896f-f29403eaee0e
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"1b6a0e0d-dc50-414f-bbba-7019a11dfd76"}},"objectType":"Table"}]
+

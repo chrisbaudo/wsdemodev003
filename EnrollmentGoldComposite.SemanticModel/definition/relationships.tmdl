@@ -1,0 +1,20 @@
+relationship 54e7a9fb-7807-4b2e-bf11-df1031014fef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: enrollments._ingest_ts
+	toColumn: LocalDateTable_2c845873-83b9-46a3-8515-af84c0f32128.Date
+
+relationship 51c149c6-6faa-10e7-26e9-365ac6472653
+	securityFilteringBehavior: none
+	fromColumn: enrollments.term_id
+	toColumn: terms.term_id
+
+relationship 9dbd1916-1be4-8ef4-9e69-dacb18ada4f8
+	securityFilteringBehavior: none
+	fromColumn: enrollments.term_id_crn
+	toColumn: courses.term_id_crn
+
+relationship ae431b9e-0dbd-f458-6f22-03dc178043a6
+	securityFilteringBehavior: none
+	fromColumn: enrollments.student_id
+	toColumn: students.student_id
+

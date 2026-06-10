@@ -11,5 +11,6 @@ CREATE TABLE [dbo].[courses] (
 	[instructor] varchar(max) NULL, 
 	[max_enrollment] varchar(max) NULL, 
 	[_ingest_ts] datetime2(6) NOT NULL, 
-	[_source_table] varchar(max) NOT NULL
+	[_source_table] varchar(max) NOT NULL, 
+	[term_id_crn] varchar(max) NULL
 );

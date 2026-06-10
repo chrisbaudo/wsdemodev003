@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - EnrollmentGold","enrollments"]
+
+ref table students
+ref table terms
+ref table courses
+ref table enrollments
+ref table DateTableTemplate_29ec3253-b49d-449c-baa7-309696ce8407
+ref table LocalDateTable_2c845873-83b9-46a3-8515-af84c0f32128
+
+ref cultureInfo en-US
+

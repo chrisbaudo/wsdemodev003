@@ -92,6 +92,15 @@ table courses
 
 		annotation SummarizationSetBy = Automatic
 
+	column term_id_crn
+		dataType: string
+		lineageTag: b75432da-a3ed-496e-a673-a2cb2adac0e9
+		sourceLineageTag: term_id_crn
+		summarizeBy: none
+		sourceColumn: term_id_crn
+
+		annotation SummarizationSetBy = Automatic
+
 	partition courses = entity
 		mode: directLake
 		source

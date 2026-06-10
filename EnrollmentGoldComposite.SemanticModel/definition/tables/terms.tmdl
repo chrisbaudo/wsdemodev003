@@ -1,0 +1,102 @@
+table terms
+	lineageTag: 0791a0a4-b444-40c9-a7ee-bcb33054f174
+	sourceLineageTag: d9c82cf5-3b9a-4c86-b2d7-f5fe9654c891
+
+	column term_id
+		dataType: string
+		isNullable: false
+		lineageTag: c7f279b5-59d5-423d-aee0-e48d32be6899
+		sourceLineageTag: 4f382dd9-99d7-4af5-a742-f7f9505b4987
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: term_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column term_name
+		dataType: string
+		lineageTag: ada31350-4c9f-4f49-92f6-d89f16ec73e8
+		sourceLineageTag: 3cfe8010-6cca-4393-b995-e866d818052d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: term_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column start_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8a071576-3d36-4cba-9c8c-baa168456329
+		sourceLineageTag: 643ffe88-0fed-4960-8b0f-7d48bf0c644f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: start_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column end_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2124e3f9-03d7-472c-9dec-15573eda2d10
+		sourceLineageTag: 6ea87663-d733-449e-8777-16ec7b82d49e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: end_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column instruction_weeks
+		dataType: string
+		lineageTag: 98b3decb-2b72-43bb-bdab-f3c400623cd3
+		sourceLineageTag: 8dd81a63-4892-4afa-b76f-9ab0bec99b22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: instruction_weeks
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column _ingest_ts
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: 65a3e8f8-eeaa-4680-aee4-da801aa6a4f5
+		sourceLineageTag: 191ecc7d-e5c9-4f4e-8e66-8f2c73afaa10
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column _source_table
+		dataType: string
+		isHidden
+		lineageTag: 235f112c-cdcf-48d4-abd5-68b1185486c5
+		sourceLineageTag: e187ccba-24f9-4d71-ad19-f9faa04d2ccb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	partition terms = entity
+		mode: directQuery
+		source
+			entityName: terms
+			expressionSource: 'DirectQuery to AS - EnrollmentGold'
+
+	changedProperty = IsHidden
+

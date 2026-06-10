@@ -1,5 +1,41 @@
 {
   "properties": {
-    "activities": []
+    "activities": [
+      {
+        "name": "Approval",
+        "type": "Approval",
+        "dependsOn": [
+          {
+            "activity": "Wait 5 Seconds",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "operationType": "ApprovalMail",
+          "approvers": "chris.baudo@microsoft.com",
+          "approvalRequestTitle": "Test Approval Email"
+        },
+        "externalReferences": {
+          "connection": "21c90144-6539-45cd-8f21-ac8cd6f9db76"
+        }
+      },
+      {
+        "name": "Wait 5 Seconds",
+        "type": "Wait",
+        "dependsOn": [],
+        "typeProperties": {
+          "waitTimeInSeconds": 5
+        }
+      }
+    ]
   }
 }

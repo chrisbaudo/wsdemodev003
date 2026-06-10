@@ -1,0 +1,75 @@
+table terms
+	lineageTag: b71ac770-0547-4328-92b8-7fb361e74bbe
+	sourceLineageTag: [dbo].[terms]
+
+	column term_id
+		dataType: string
+		lineageTag: 10d51a27-af89-4634-8796-654df4c4c317
+		sourceLineageTag: term_id
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column term_name
+		dataType: string
+		lineageTag: dfe20553-124b-46ef-8941-b2da58fb0eb2
+		sourceLineageTag: term_name
+		summarizeBy: none
+		sourceColumn: term_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: string
+		lineageTag: 64a48029-c786-4b6f-980c-ed15817dfc61
+		sourceLineageTag: start_date
+		summarizeBy: none
+		sourceColumn: start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_date
+		dataType: string
+		lineageTag: dee21848-1abb-4615-91ad-74086b609095
+		sourceLineageTag: end_date
+		summarizeBy: none
+		sourceColumn: end_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column instruction_weeks
+		dataType: string
+		lineageTag: 3437c344-8153-4365-a6ad-bc7b2fe8acd4
+		sourceLineageTag: instruction_weeks
+		summarizeBy: none
+		sourceColumn: instruction_weeks
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ingest_ts
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5c00022b-6af5-4981-87d6-33b78c980574
+		sourceLineageTag: _ingest_ts
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_table
+		dataType: string
+		lineageTag: e3941636-e091-4379-acd4-0942f3db4912
+		sourceLineageTag: _source_table
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		annotation SummarizationSetBy = Automatic
+
+	partition terms = entity
+		mode: directLake
+		source
+			entityName: terms
+			schemaName: dbo
+			expressionSource: 'DirectLake - EnrollmentGold'
+

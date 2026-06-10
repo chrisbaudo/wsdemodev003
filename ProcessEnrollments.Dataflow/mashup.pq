@@ -6,17 +6,19 @@ shared courses = let
   Source = Lakehouse.Contents(null),
   Navigation = Source{[workspaceId = "d2a440f4-6d00-4354-9f77-a2fcae66e547"]}[Data],
   #"Navigation 1" = Navigation{[lakehouseId = "54e9c533-df37-4481-949c-e08554246a41"]}[Data],
-  #"Navigation 2" = #"Navigation 1"{[Id = "courses", ItemKind = "Table"]}[Data]
+  #"Navigation 2" = #"Navigation 1"{[Id = "courses", ItemKind = "Table"]}[Data],
+  #"Add column" = Table.AddColumn(#"Navigation 2", "term_id_crn", each [term_id] & [crn], type text)
 in
-  #"Navigation 2";
+  #"Add column";
 [BindToDefaultDestination = true]
 shared enrollments = let
   Source = Lakehouse.Contents(null),
   Navigation = Source{[workspaceId = "d2a440f4-6d00-4354-9f77-a2fcae66e547"]}[Data],
   #"Navigation 1" = Navigation{[lakehouseId = "54e9c533-df37-4481-949c-e08554246a41"]}[Data],
-  #"Navigation 2" = #"Navigation 1"{[Id = "enrollments", ItemKind = "Table"]}[Data]
+  #"Navigation 2" = #"Navigation 1"{[Id = "enrollments", ItemKind = "Table"]}[Data],
+  #"Add column" = Table.AddColumn(#"Navigation 2", "term_id_crn", each [term_id] & [crn], type text)
 in
-  #"Navigation 2";
+  #"Add column";
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "students_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared students = let
   Source = Lakehouse.Contents(null),

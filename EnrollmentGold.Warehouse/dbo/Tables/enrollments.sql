@@ -13,5 +13,6 @@ CREATE TABLE [dbo].[enrollments] (
 	[grade] varchar(max) NULL, 
 	[quality_points] varchar(max) NULL, 
 	[_ingest_ts] datetime2(6) NOT NULL, 
-	[_source_table] varchar(max) NOT NULL
+	[_source_table] varchar(max) NOT NULL, 
+	[term_id_crn] varchar(max) NULL
 );

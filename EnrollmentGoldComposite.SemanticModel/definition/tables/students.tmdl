@@ -1,0 +1,190 @@
+table students
+	lineageTag: dad865ae-310c-48f7-8939-d256f4355784
+	sourceLineageTag: 47e3bbcf-ef8f-49b2-9640-92d2a60b63fd
+
+	/// Calculates the average cumulative GPA for all students in the dataset.
+	measure average_cumulative_gpa = EXTERNALMEASURE("average_cumulative_gpa", DOUBLE, "DirectQuery to AS - EnrollmentGold")
+		formatString: 0
+		lineageTag: 878b7d18-7ca9-4f0f-a06f-116acf38314c
+		sourceLineageTag: 3063619d-aec3-4025-8f80-29f8f0d366f9
+		dataCategory: Uncategorized
+
+	measure max_cumulative_gpa = EXTERNALMEASURE("max_cumulative_gpa", DOUBLE, "DirectQuery to AS - EnrollmentGold")
+		formatString: 0.00
+		lineageTag: b44c3d1f-fdab-4820-919a-271a53e89c21
+		sourceLineageTag: c50a3838-409d-4685-91a7-7ff8a1f5b5a3
+		dataCategory: Uncategorized
+
+	column student_id
+		dataType: string
+		isNullable: false
+		lineageTag: aa7f8ff8-5e12-4a2b-a274-b9564f22243d
+		sourceLineageTag: b6560bb9-6898-47ac-9ce1-433857baa399
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = User
+
+	column first_name
+		dataType: string
+		lineageTag: 00f460bd-0894-4c51-9631-265d552acabb
+		sourceLineageTag: c3f21c7c-cafc-4eeb-b7de-a1aa03c151fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = User
+
+	column last_name
+		dataType: string
+		lineageTag: ee5d80ec-c424-4f1b-9dff-65201ec9b918
+		sourceLineageTag: aee10748-ba6c-4538-9665-a033fd0a0584
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = User
+
+	column date_of_birth
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0ba74c68-4dcb-462c-9d12-4523921e42cd
+		sourceLineageTag: 6187e07a-da27-4fa3-adaa-13599164952c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: date_of_birth
+
+		annotation SummarizationSetBy = User
+
+	column admit_term
+		dataType: string
+		lineageTag: c3647081-1779-449f-bc92-1180a359d4cd
+		sourceLineageTag: 9768ffdd-925e-4761-8913-0fa0ec4714b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: admit_term
+
+		annotation SummarizationSetBy = User
+
+	column major
+		dataType: string
+		lineageTag: ce18cb48-c097-4d64-a2a8-bd7c87dcbacb
+		sourceLineageTag: f939916f-d8c1-4af5-b58b-6ff869533985
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: major
+
+		annotation SummarizationSetBy = User
+
+	column class_level
+		dataType: string
+		lineageTag: 4c203d65-5ca0-4415-b5c9-b9a10cea5111
+		sourceLineageTag: 14b65d04-2ea9-457a-b2aa-664f3d42f534
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: class_level
+
+		annotation SummarizationSetBy = User
+
+	column residency
+		dataType: string
+		lineageTag: ac76384a-a884-4479-a797-e4a2e1b15215
+		sourceLineageTag: 7afbf6d7-982d-48fe-81f2-6e620b97c799
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: residency
+
+		annotation SummarizationSetBy = User
+
+	column pell_eligible
+		dataType: string
+		lineageTag: 4e69e5a3-8125-42a5-93b5-3e6e94d53033
+		sourceLineageTag: 97d17477-2e80-4b9c-a947-de8923822530
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: pell_eligible
+
+		annotation SummarizationSetBy = User
+
+	column cumulative_gpa
+		dataType: double
+		formatString: 0.00
+		lineageTag: 3c465973-543a-4cab-b48f-14c4694d6cd6
+		sourceLineageTag: 628051e5-52ff-45f8-bf6e-40f09a2f9bd2
+		dataCategory: Uncategorized
+		summarizeBy: average
+		sourceColumn: cumulative_gpa
+
+		annotation SummarizationSetBy = User
+
+	column _ingest_ts
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: 1610120a-5242-4206-a4b5-e764ba3ca8d9
+		sourceLineageTag: bfbe34db-1555-4a27-a8f7-c55c5fccebfd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		annotation SummarizationSetBy = User
+
+	column _source_table
+		dataType: string
+		isHidden
+		lineageTag: 59cc0d39-ddf4-4766-b4ad-356cd836356f
+		sourceLineageTag: d77d69bb-e914-4a77-af46-7fb2d2406302
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		annotation SummarizationSetBy = User
+
+	column birth_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 46fd4e2d-2b3e-4bee-839c-aa247e464346
+		sourceLineageTag: a68ffb04-681d-4a3d-846d-aa2d62889a64
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: birth_year
+
+		annotation SummarizationSetBy = User
+
+	column birth_month
+		dataType: int64
+		formatString: 0
+		lineageTag: d894ba02-0f18-470e-9d0d-4fd87742f13f
+		sourceLineageTag: 2f827597-9163-4eee-a4d8-ea87a149a994
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: birth_month
+
+		annotation SummarizationSetBy = User
+
+	hierarchy date_of_birth_hierarchy
+		lineageTag: 249afa09-cbcf-4293-b971-03462ec821a5
+		sourceLineageTag: a47a3a20-ab6e-4719-a93b-fbaa67cf1dda
+
+		level birth_year
+			lineageTag: 18232e38-b4ef-4406-a51a-63b692840976
+			sourceLineageTag: de7c02ea-71aa-4a62-a7ca-2d4c554cf743
+			column: birth_year
+
+		level birth_month
+			lineageTag: f94ccef6-ad42-4049-8c88-76f3774ef77a
+			sourceLineageTag: 1ff21bf4-2ec6-4ca2-b641-1e621f25eebd
+			column: birth_month
+
+		level date_of_birth
+			lineageTag: 0ba4f7b6-13d2-4cb6-b9d0-7a2e91b45adf
+			sourceLineageTag: ad860bb5-2864-4efc-aa34-740ba2e66ccc
+			column: date_of_birth
+
+	partition students = entity
+		mode: directQuery
+		source
+			entityName: students
+			expressionSource: 'DirectQuery to AS - EnrollmentGold'
+

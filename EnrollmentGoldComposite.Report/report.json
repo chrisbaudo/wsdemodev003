@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.72\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU04\",\"type\":2,\"version\":{\"visual\":\"2.8.0\",\"report\":\"3.2.0\",\"page\":\"2.3.1\"}}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU04",
+            "path": "BaseThemes/CY26SU04.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "70c6507346d3e40001e1",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"976fae7b0097b399c7bc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.648288553551712,\"y\":0,\"z\":0,\"width\":1269.955980861244,\"height\":720.0035333087965,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"students.student_id\"},{\"queryRef\":\"students.first_name\"},{\"queryRef\":\"students.last_name\"},{\"queryRef\":\"students.average_cumulative_gpa\"},{\"queryRef\":\"students.max_cumulative_gpa\"},{\"queryRef\":\"enrollments.course_id\"},{\"queryRef\":\"enrollments.course_title\"},{\"queryRef\":\"enrollments.grade\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"students\",\"Type\":0},{\"Name\":\"e\",\"Entity\":\"enrollments\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"first_name\"},\"Name\":\"students.first_name\",\"NativeReferenceName\":\"first_name\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"last_name\"},\"Name\":\"students.last_name\",\"NativeReferenceName\":\"last_name\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"average_cumulative_gpa\"},\"Name\":\"students.average_cumulative_gpa\",\"NativeReferenceName\":\"average_cumulative_gpa\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"max_cumulative_gpa\"},\"Name\":\"students.max_cumulative_gpa\",\"NativeReferenceName\":\"max_cumulative_gpa\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"course_id\"},\"Name\":\"enrollments.course_id\",\"NativeReferenceName\":\"course_id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"course_title\"},\"Name\":\"enrollments.course_title\",\"NativeReferenceName\":\"course_title\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"grade\"},\"Name\":\"enrollments.grade\",\"NativeReferenceName\":\"grade\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"student_id\"},\"Name\":\"students.student_id\",\"NativeReferenceName\":\"student_id\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 720.00,
+          "width": 1269.96,
+          "x": 9.65,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

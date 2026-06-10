@@ -1,0 +1,142 @@
+table courses
+	lineageTag: 7ad8f38c-f03a-4a95-aada-0c3a0d6dd077
+	sourceLineageTag: 67aef59b-8dfe-45de-99f4-e3d6695f3346
+
+	column term_id
+		dataType: string
+		lineageTag: 785511e6-8cf4-4989-8849-30b4302c7e9c
+		sourceLineageTag: b1a8ed1b-fc67-46d1-896e-a2df55b4076f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = User
+
+	column course_id
+		dataType: string
+		lineageTag: 88dcf197-b47f-46c5-86ed-ce03327d3613
+		sourceLineageTag: aedc176b-b29b-4766-a24c-a433b5ef9244
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = User
+
+	column section
+		dataType: string
+		lineageTag: 28bc0108-2f03-4471-b524-964e2ce102c0
+		sourceLineageTag: 27c304cd-e98c-49a1-8ae2-44414ffe73e7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: section
+
+		annotation SummarizationSetBy = User
+
+	column crn
+		dataType: string
+		lineageTag: 26973a60-605c-4bdb-977e-32e0566a3d24
+		sourceLineageTag: d1bbadaa-eb70-471e-8078-e112cf3acc62
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: crn
+
+		annotation SummarizationSetBy = User
+
+	column subject
+		dataType: string
+		lineageTag: 14d9f65e-48be-4fb5-b480-0b7ff8ce1583
+		sourceLineageTag: f978f4ce-a506-46b3-af4b-f97b32c05080
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: subject
+
+		annotation SummarizationSetBy = User
+
+	column catalog_nbr
+		dataType: string
+		lineageTag: d87279d9-ff77-4fe5-80fe-2f3933ad7b42
+		sourceLineageTag: b6185542-63de-4d9f-941f-92ac3763ad40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: catalog_nbr
+
+		annotation SummarizationSetBy = User
+
+	column course_title
+		dataType: string
+		lineageTag: 0a50b41f-583a-4920-abfb-ce2701d667a5
+		sourceLineageTag: 389a3bc7-59d8-4ac2-8a0b-dc75ffe07a9f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: course_title
+
+		annotation SummarizationSetBy = User
+
+	column credits
+		dataType: string
+		lineageTag: cbe8a00c-27e6-4270-b960-cb6ada7f7c8b
+		sourceLineageTag: 4cd80626-7988-4dc8-a0d7-6b326de4e72d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: credits
+
+		annotation SummarizationSetBy = User
+
+	column instructor
+		dataType: string
+		lineageTag: 6000affb-211f-4cd0-bbd3-35128e742c2e
+		sourceLineageTag: de1f44fb-09f1-4401-a2d0-aed7ff72388a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: instructor
+
+		annotation SummarizationSetBy = User
+
+	column max_enrollment
+		dataType: string
+		lineageTag: c71b996e-9cf5-4c94-9688-cf283f92daab
+		sourceLineageTag: 5eff6cc3-17ba-4ba1-9a6a-9baa27b66133
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: max_enrollment
+
+		annotation SummarizationSetBy = User
+
+	column _ingest_ts
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: e9aac2ab-11f2-4193-a025-91fa0f895263
+		sourceLineageTag: d97dc0ea-cd59-4c1c-a57a-066169775b4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		annotation SummarizationSetBy = User
+
+	column _source_table
+		dataType: string
+		lineageTag: d0179998-e49e-4f73-be7b-d54b3cab9ee7
+		sourceLineageTag: c477d84c-2720-4997-a208-77a63978cd95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		annotation SummarizationSetBy = User
+
+	column term_id_crn
+		dataType: string
+		isNullable: false
+		lineageTag: bd7f926a-612f-417e-b406-46a57e497570
+		sourceLineageTag: 8b0530ef-edc8-40c3-93a9-2c0c863e52c4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: term_id_crn
+
+		annotation SummarizationSetBy = User
+
+	partition courses = entity
+		mode: directQuery
+		source
+			entityName: courses
+			expressionSource: 'DirectQuery to AS - EnrollmentGold'
+

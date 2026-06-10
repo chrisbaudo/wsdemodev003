@@ -184,6 +184,20 @@
                 "value": "Automatic"
               }
             ]
+          },
+          {
+            "name": "term_id_crn",
+            "dataType": "string",
+            "sourceColumn": "term_id_crn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "term_id_crn",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           }
         ],
         "partitions": [
@@ -398,6 +412,20 @@
             "sourceColumn": "_source_table",
             "sourceProviderType": "varchar",
             "sourceLineageTag": "_source_table",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "term_id_crn",
+            "dataType": "string",
+            "sourceColumn": "term_id_crn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "term_id_crn",
             "summarizeBy": "none",
             "annotations": [
               {

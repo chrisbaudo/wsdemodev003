@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "ExtractFormsBronze"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3ccb4354-37be-833e-4780-80c54de3fc5a"
+  }
+}

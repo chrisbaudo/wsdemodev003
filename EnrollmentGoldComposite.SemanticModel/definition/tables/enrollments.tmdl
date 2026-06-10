@@ -1,0 +1,138 @@
+table enrollments
+	lineageTag: f3a68338-3c25-4593-8b23-a1146a33edb5
+
+	column term_id
+		dataType: string
+		lineageTag: 600d0f7b-7e42-46df-9d87-b180d6a444ef
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		lineageTag: d202024d-f9ee-4ade-b7fe-5b41c7addf65
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column crn
+		dataType: string
+		lineageTag: b4f5dcbc-a8a6-40ce-ad91-0df42ae6c279
+		summarizeBy: none
+		sourceColumn: crn
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		lineageTag: 94261d03-0149-4481-b50c-0565dd6c36be
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column section
+		dataType: string
+		lineageTag: c4f82396-9b14-46f1-9c7a-dba44f4f615a
+		summarizeBy: none
+		sourceColumn: section
+
+		annotation SummarizationSetBy = Automatic
+
+	column subject
+		dataType: string
+		lineageTag: 372f130c-4af7-4779-99ee-84e4fc364e22
+		summarizeBy: none
+		sourceColumn: subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column catalog_nbr
+		dataType: string
+		lineageTag: 759cd0ce-95e9-459a-9b38-71534c37e80e
+		summarizeBy: none
+		sourceColumn: catalog_nbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_title
+		dataType: string
+		lineageTag: 44c2813e-1fe1-4e03-a2a3-14b6d1db48f7
+		summarizeBy: none
+		sourceColumn: course_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column credits
+		dataType: string
+		lineageTag: ddab71bb-735f-44ed-b712-755ccb4e8ae8
+		summarizeBy: none
+		sourceColumn: credits
+
+		annotation SummarizationSetBy = Automatic
+
+	column enrollment_status
+		dataType: string
+		lineageTag: cfa41673-2357-4b66-9c74-0f265d3a426a
+		summarizeBy: none
+		sourceColumn: enrollment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade
+		dataType: string
+		lineageTag: 157bfafc-38c9-4ec8-9766-2422527a3dcd
+		summarizeBy: none
+		sourceColumn: grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column quality_points
+		dataType: string
+		lineageTag: e2ebc1b6-8aeb-404d-b938-6779a36cc389
+		summarizeBy: none
+		sourceColumn: quality_points
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ingest_ts
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 156c6772-2d87-4c42-b181-00449adae564
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		variation Variation
+			isDefault
+			relationship: 54e7a9fb-7807-4b2e-bf11-df1031014fef
+			defaultHierarchy: LocalDateTable_2c845873-83b9-46a3-8515-af84c0f32128.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_table
+		dataType: string
+		lineageTag: 9b92fd8f-baa6-4262-b63a-06a5ebce7501
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		annotation SummarizationSetBy = Automatic
+
+	column term_id_crn
+		dataType: string
+		lineageTag: 91aed7fa-d303-42ae-b522-5a9e44e1d383
+		summarizeBy: none
+		sourceColumn: term_id_crn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enrollments = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("cqhd3r4dmviunhqthb4jhdeu7m-6rakjuqanvkehh3xul6k4zxfi4.datawarehouse.fabric.microsoft.com", "EnrollmentGold"),
+				  #"Navigation 1" = Source{[Schema = "dbo", Item = "enrollments"]}[Data]
+				in
+				  #"Navigation 1"
+

@@ -11,13 +11,12 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_QueryOrder = ["DatabaseQuery"]
 
-annotation PBI_ProTooling = ["WebModelingEdit","CopilotTooling","Copilot","CopilotMeasureDescriptions","DaxQueryView_Desktop"]
+annotation PBI_ProTooling = ["WebModelingEdit","CopilotTooling","Copilot","CopilotMeasureDescriptions","DaxQueryView_Desktop","RemoteModeling"]
 
-ref table courses
 ref table enrollments
 ref table students
 ref table terms
-ref table date
+ref table courses
 
 ref cultureInfo en-US
 

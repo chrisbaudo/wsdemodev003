@@ -1,0 +1,147 @@
+table enrollments
+	lineageTag: 9e2c326c-a1d0-4ca7-b880-7ba2c994caf5
+	sourceLineageTag: [dbo].[enrollments]
+
+	column term_id
+		dataType: string
+		lineageTag: 882ef33e-ff06-4467-97c1-78e19db38f5d
+		sourceLineageTag: term_id
+		summarizeBy: none
+		sourceColumn: term_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		lineageTag: 3a34ad6d-0959-4d77-8f20-bf096561a4cd
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column crn
+		dataType: string
+		lineageTag: de31ade2-7dd2-4dba-908d-a1122772f368
+		sourceLineageTag: crn
+		summarizeBy: none
+		sourceColumn: crn
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_id
+		dataType: string
+		lineageTag: 29e54216-aa01-4925-ad67-1702ddcd7398
+		sourceLineageTag: course_id
+		summarizeBy: none
+		sourceColumn: course_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column section
+		dataType: string
+		lineageTag: 27a3670d-ca46-4873-a3d9-2b19ee3ca6e5
+		sourceLineageTag: section
+		summarizeBy: none
+		sourceColumn: section
+
+		annotation SummarizationSetBy = Automatic
+
+	column subject
+		dataType: string
+		lineageTag: ef0d1f50-65cf-4574-ad45-31cfc745cbf6
+		sourceLineageTag: subject
+		summarizeBy: none
+		sourceColumn: subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column catalog_nbr
+		dataType: string
+		lineageTag: 8415688a-eb7f-4fd2-9628-d05872a150b7
+		sourceLineageTag: catalog_nbr
+		summarizeBy: none
+		sourceColumn: catalog_nbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column course_title
+		dataType: string
+		lineageTag: 4ed1f190-d5a2-4582-8bf1-01eba7d10bd6
+		sourceLineageTag: course_title
+		summarizeBy: none
+		sourceColumn: course_title
+
+		annotation SummarizationSetBy = Automatic
+
+	column credits
+		dataType: string
+		lineageTag: 178a4c48-42cb-4f07-bc35-21e7921ac291
+		sourceLineageTag: credits
+		summarizeBy: none
+		sourceColumn: credits
+
+		annotation SummarizationSetBy = Automatic
+
+	column enrollment_status
+		dataType: string
+		lineageTag: 74bef297-13ac-435e-8195-337e7990ded8
+		sourceLineageTag: enrollment_status
+		summarizeBy: none
+		sourceColumn: enrollment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade
+		dataType: string
+		lineageTag: 53f3c111-5cbe-4084-8e5b-5bbacde6b34a
+		sourceLineageTag: grade
+		summarizeBy: none
+		sourceColumn: grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column quality_points
+		dataType: string
+		lineageTag: 8600995d-118c-419a-9cc0-195f821f138d
+		sourceLineageTag: quality_points
+		summarizeBy: none
+		sourceColumn: quality_points
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ingest_ts
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f2dc7666-643c-46f3-8f23-c40c6c1b48c5
+		sourceLineageTag: _ingest_ts
+		summarizeBy: none
+		sourceColumn: _ingest_ts
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_table
+		dataType: string
+		lineageTag: 322eb91a-fa0c-4acf-b915-5d8005ca8b66
+		sourceLineageTag: _source_table
+		summarizeBy: none
+		sourceColumn: _source_table
+
+		annotation SummarizationSetBy = Automatic
+
+	column term_id_crn
+		dataType: string
+		lineageTag: 9ea1224a-8be3-4a44-a40b-5afe1396689e
+		sourceLineageTag: term_id_crn
+		summarizeBy: none
+		sourceColumn: term_id_crn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition enrollments = entity
+		mode: directLake
+		source
+			entityName: enrollments
+			schemaName: dbo
+			expressionSource: 'DirectLake - EnrollmentGold'
+

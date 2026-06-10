@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "EnrollmentGoldComposite"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "02cf63db-f574-bed6-499b-e77519ecd0d5"
+  }
+}
