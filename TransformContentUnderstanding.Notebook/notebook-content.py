@@ -32,7 +32,7 @@ import requests
 import time
 import pandas as pd
 
-# Authentication
+# Auth
 token = credentials.getToken("https://cognitiveservices.azure.com")
 
 # API details
