@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataAgent",
+    "displayName": "Enrollment Agent Silver"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f46bd15e-3a2e-b3dd-4fb6-d02fa8a2a8ff"
+  }
+}
