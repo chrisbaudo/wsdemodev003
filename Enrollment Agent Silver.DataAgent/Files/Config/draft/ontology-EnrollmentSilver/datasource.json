@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "ffc942a5-3bb2-44db-b145-61a7354620ad",
+  "workspaceId": "d2a440f4-6d00-4354-9f77-a2fcae66e547",
+  "dataSourceInstructions": null,
+  "displayName": "EnrollmentSilver",
+  "type": "ontology",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "courses",
+      "is_selected": true,
+      "display_name": "courses",
+      "type": "ontology.entity",
+      "description": "term_id,course_id,section,crn,subject,catalog_nbr,course_title,credits,instructor,max_enrollment",
+      "children": []
+    },
+    {
+      "id": "enrollments",
+      "is_selected": true,
+      "display_name": "enrollments",
+      "type": "ontology.entity",
+      "description": "term_id,student_id,crn,course_id,section,subject,catalog_nbr,course_title,credits,enrollment_status,grade,quality_points",
+      "children": []
+    },
+    {
+      "id": "students",
+      "is_selected": true,
+      "display_name": "students",
+      "type": "ontology.entity",
+      "description": "student_id,first_name,last_name,date_of_birth,admit_term,major,class_level,residency,pell_eligible,cumulative_gpa",
+      "children": []
+    },
+    {
+      "id": "terms",
+      "is_selected": true,
+      "display_name": "terms",
+      "type": "ontology.entity",
+      "description": "term_id,term_name,start_date,end_date,instruction_weeks",
+      "children": []
+    }
+  ]
+}
