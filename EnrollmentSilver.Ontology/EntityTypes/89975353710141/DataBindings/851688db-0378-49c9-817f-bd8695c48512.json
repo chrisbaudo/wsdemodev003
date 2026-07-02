@@ -47,8 +47,8 @@
     ],
     "sourceTableProperties": {
       "sourceType": "LakehouseTable",
-      "workspaceId": "d2a440f4-6d00-4354-9f77-a2fcae66e547",
-      "itemId": "e513c730-c3e9-4ee4-9417-e402e73abdf2",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "e73abdf2-e402-9417-4ee4-c3e9e513c730",
       "sourceTableName": "courses",
       "sourceSchema": "dbo"
     }
