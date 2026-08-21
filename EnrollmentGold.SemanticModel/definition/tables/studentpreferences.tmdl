@@ -1,0 +1,107 @@
+table studentpreferences
+	lineageTag: ff80be91-53ea-45cb-8769-de640905d664
+	sourceLineageTag: [dbo].[studentpreferences]
+
+	column student_id
+		dataType: string
+		sourceProviderType: varchar(50)
+		lineageTag: f33cefcb-be5b-455a-b5d5-32066e648bd6
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column preference_key
+		dataType: string
+		sourceProviderType: varchar(100)
+		lineageTag: adfbecc0-7692-4a4b-b014-f5518d92dbe1
+		sourceLineageTag: preference_key
+		summarizeBy: none
+		sourceColumn: preference_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column preference_value
+		dataType: string
+		sourceProviderType: varchar(1000)
+		lineageTag: 5ae33d98-e199-44b9-916d-f12ef68de144
+		sourceLineageTag: preference_value
+		summarizeBy: none
+		sourceColumn: preference_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: fa47e84c-53e0-4fcb-89b2-4863c2a0d0e2
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 60c1435b-b0d8-4f35-a623-dae16b00d520
+		sourceLineageTag: created_at_utc
+		summarizeBy: none
+		sourceColumn: created_at_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_by_upn
+		dataType: string
+		sourceProviderType: varchar(320)
+		lineageTag: 45dc48a6-a288-43cf-995b-6079838493c9
+		sourceLineageTag: created_by_upn
+		summarizeBy: none
+		sourceColumn: created_by_upn
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at_utc
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6becfda2-596f-465d-a965-a3d3b876db15
+		sourceLineageTag: updated_at_utc
+		summarizeBy: none
+		sourceColumn: updated_at_utc
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_by_upn
+		dataType: string
+		sourceProviderType: varchar(320)
+		lineageTag: 23bfdb0d-0189-4027-b695-486af798743a
+		sourceLineageTag: updated_by_upn
+		summarizeBy: none
+		sourceColumn: updated_by_upn
+
+		annotation SummarizationSetBy = Automatic
+
+	column version_number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1150d0aa-c473-442a-9aef-5180f3772050
+		sourceLineageTag: version_number
+		summarizeBy: sum
+		sourceColumn: version_number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition studentpreferences = entity
+		mode: directLake
+		source
+			entityName: studentpreferences
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

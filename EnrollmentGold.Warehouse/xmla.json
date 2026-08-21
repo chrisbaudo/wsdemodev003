@@ -455,6 +455,160 @@
         ]
       },
       {
+        "name": "studentpreferences",
+        "sourceLineageTag": "[dbo].[studentpreferences]",
+        "columns": [
+          {
+            "name": "student_id",
+            "dataType": "string",
+            "sourceColumn": "student_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "student_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preference_key",
+            "dataType": "string",
+            "sourceColumn": "preference_key",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preference_key",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "preference_value",
+            "dataType": "string",
+            "sourceColumn": "preference_value",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "preference_value",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_active",
+            "dataType": "boolean",
+            "sourceColumn": "is_active",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_active",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "created_at_utc",
+            "dataType": "dateTime",
+            "sourceColumn": "created_at_utc",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "created_at_utc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "created_by_upn",
+            "dataType": "string",
+            "sourceColumn": "created_by_upn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "created_by_upn",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "updated_at_utc",
+            "dataType": "dateTime",
+            "sourceColumn": "updated_at_utc",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "updated_at_utc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "updated_by_upn",
+            "dataType": "string",
+            "sourceColumn": "updated_by_upn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "updated_by_upn",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "version_number",
+            "dataType": "int64",
+            "sourceColumn": "version_number",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "version_number",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "studentpreferences",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "students",
         "sourceLineageTag": "[dbo].[students]",
         "columns": [
@@ -679,6 +833,58 @@
         ]
       },
       {
+        "name": "studentssecurity",
+        "sourceLineageTag": "[dbo].[studentssecurity]",
+        "columns": [
+          {
+            "name": "UserUPN",
+            "dataType": "string",
+            "sourceColumn": "UserUPN",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UserUPN",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "student_id",
+            "dataType": "string",
+            "sourceColumn": "student_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "student_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "studentssecurity",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "terms",
         "sourceLineageTag": "[dbo].[terms]",
         "columns": [
@@ -789,6 +995,742 @@
             "source": {
               "type": "entity",
               "entityName": "terms",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "vw_courses",
+        "sourceLineageTag": "[dbo].[vw_courses]",
+        "columns": [
+          {
+            "name": "UserUPN",
+            "dataType": "string",
+            "sourceColumn": "UserUPN",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UserUPN",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "student_id",
+            "dataType": "string",
+            "sourceColumn": "student_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "student_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "term_id",
+            "dataType": "string",
+            "sourceColumn": "term_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "term_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "course_id",
+            "dataType": "string",
+            "sourceColumn": "course_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "course_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "section",
+            "dataType": "string",
+            "sourceColumn": "section",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "section",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "crn",
+            "dataType": "string",
+            "sourceColumn": "crn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "crn",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "subject",
+            "dataType": "string",
+            "sourceColumn": "subject",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "subject",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "catalog_nbr",
+            "dataType": "string",
+            "sourceColumn": "catalog_nbr",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "catalog_nbr",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "course_title",
+            "dataType": "string",
+            "sourceColumn": "course_title",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "course_title",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "credits",
+            "dataType": "string",
+            "sourceColumn": "credits",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "credits",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "instructor",
+            "dataType": "string",
+            "sourceColumn": "instructor",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "instructor",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "max_enrollment",
+            "dataType": "string",
+            "sourceColumn": "max_enrollment",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "max_enrollment",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_ingest_ts",
+            "dataType": "dateTime",
+            "sourceColumn": "_ingest_ts",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "_ingest_ts",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_source_table",
+            "dataType": "string",
+            "sourceColumn": "_source_table",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_source_table",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "term_id_crn",
+            "dataType": "string",
+            "sourceColumn": "term_id_crn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "term_id_crn",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_courses",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "vw_enrollments",
+        "sourceLineageTag": "[dbo].[vw_enrollments]",
+        "columns": [
+          {
+            "name": "UserUPN",
+            "dataType": "string",
+            "sourceColumn": "UserUPN",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UserUPN",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "student_id",
+            "dataType": "string",
+            "sourceColumn": "student_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "student_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "term_id",
+            "dataType": "string",
+            "sourceColumn": "term_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "term_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "enrollment_student_id",
+            "dataType": "string",
+            "sourceColumn": "enrollment_student_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "enrollment_student_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "crn",
+            "dataType": "string",
+            "sourceColumn": "crn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "crn",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "course_id",
+            "dataType": "string",
+            "sourceColumn": "course_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "course_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "section",
+            "dataType": "string",
+            "sourceColumn": "section",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "section",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "subject",
+            "dataType": "string",
+            "sourceColumn": "subject",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "subject",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "catalog_nbr",
+            "dataType": "string",
+            "sourceColumn": "catalog_nbr",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "catalog_nbr",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "course_title",
+            "dataType": "string",
+            "sourceColumn": "course_title",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "course_title",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "credits",
+            "dataType": "string",
+            "sourceColumn": "credits",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "credits",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "enrollment_status",
+            "dataType": "string",
+            "sourceColumn": "enrollment_status",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "enrollment_status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "grade",
+            "dataType": "string",
+            "sourceColumn": "grade",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "grade",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "quality_points",
+            "dataType": "string",
+            "sourceColumn": "quality_points",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "quality_points",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_ingest_ts",
+            "dataType": "dateTime",
+            "sourceColumn": "_ingest_ts",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "_ingest_ts",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_source_table",
+            "dataType": "string",
+            "sourceColumn": "_source_table",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_source_table",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "term_id_crn",
+            "dataType": "string",
+            "sourceColumn": "term_id_crn",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "term_id_crn",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_enrollments",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "vw_students",
+        "sourceLineageTag": "[dbo].[vw_students]",
+        "columns": [
+          {
+            "name": "student_id",
+            "dataType": "string",
+            "sourceColumn": "student_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "student_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "first_name",
+            "dataType": "string",
+            "sourceColumn": "first_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "first_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "last_name",
+            "dataType": "string",
+            "sourceColumn": "last_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "last_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "date_of_birth",
+            "dataType": "dateTime",
+            "sourceColumn": "date_of_birth",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "date_of_birth",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "admit_term",
+            "dataType": "string",
+            "sourceColumn": "admit_term",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "admit_term",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "major",
+            "dataType": "string",
+            "sourceColumn": "major",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "major",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "class_level",
+            "dataType": "string",
+            "sourceColumn": "class_level",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "class_level",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "residency",
+            "dataType": "string",
+            "sourceColumn": "residency",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "residency",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pell_eligible",
+            "dataType": "string",
+            "sourceColumn": "pell_eligible",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "pell_eligible",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cumulative_gpa",
+            "dataType": "string",
+            "sourceColumn": "cumulative_gpa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cumulative_gpa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "birth_year",
+            "dataType": "int64",
+            "sourceColumn": "birth_year",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "birth_year",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "birth_month",
+            "dataType": "int64",
+            "sourceColumn": "birth_month",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "birth_month",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_ingest_ts",
+            "dataType": "dateTime",
+            "sourceColumn": "_ingest_ts",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "_ingest_ts",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_source_table",
+            "dataType": "string",
+            "sourceColumn": "_source_table",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_source_table",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "UserUPN",
+            "dataType": "string",
+            "sourceColumn": "UserUPN",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "UserUPN",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_students",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }

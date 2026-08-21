@@ -168,7 +168,7 @@ table students
 		sourceProviderType: bigint
 		lineageTag: a68ffb04-681d-4a3d-846d-aa2d62889a64
 		sourceLineageTag: birth_year
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: birth_year
 
 		annotation SummarizationSetBy = Automatic
@@ -179,7 +179,7 @@ table students
 		sourceProviderType: bigint
 		lineageTag: 2f827597-9163-4eee-a4d8-ea87a149a994
 		sourceLineageTag: birth_month
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: birth_month
 
 		annotation SummarizationSetBy = Automatic
