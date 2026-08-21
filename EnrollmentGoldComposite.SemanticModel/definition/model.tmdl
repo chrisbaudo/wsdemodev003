@@ -10,6 +10,8 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_QueryOrder = ["DirectQuery to AS - EnrollmentGold","enrollments"]
 
+annotation PBI_ProTooling = ["WebModelingEdit","CopilotTooling"]
+
 ref table students
 ref table terms
 ref table courses
