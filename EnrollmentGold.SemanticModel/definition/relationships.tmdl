@@ -10,3 +10,7 @@ relationship 67d00158-ede1-06d8-f780-6e05349d6a55
 	fromColumn: enrollments.term_id
 	toColumn: terms.term_id
 
+relationship 3a05e950-8035-e227-7e7b-f2529f9e621b
+	fromColumn: students.student_id
+	toColumn: studentssecurity.student_id
+

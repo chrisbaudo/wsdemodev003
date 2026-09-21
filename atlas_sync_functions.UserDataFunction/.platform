@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "UserDataFunction",
+    "displayName": "atlas_sync_functions"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f5750f26-ae8f-9cf9-4f5a-70bbd1595318"
+  }
+}

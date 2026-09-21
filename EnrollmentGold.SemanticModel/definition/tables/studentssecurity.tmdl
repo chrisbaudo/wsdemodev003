@@ -1,0 +1,33 @@
+table studentssecurity
+	lineageTag: db50b011-e7ba-48f8-8c9f-bb529ed69636
+	sourceLineageTag: [dbo].[studentssecurity]
+
+	column UserUPN
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 40de68b9-57df-4be2-a7e4-08f018c5b415
+		sourceLineageTag: UserUPN
+		summarizeBy: none
+		sourceColumn: UserUPN
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		sourceProviderType: varchar(-1)
+		lineageTag: 75939fc0-9a19-402f-9b78-a0ee04e880de
+		sourceLineageTag: student_id
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition studentssecurity = entity
+		mode: directLake
+		source
+			entityName: studentssecurity
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

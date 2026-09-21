@@ -17,6 +17,9 @@ ref table enrollments
 ref table students
 ref table terms
 ref table courses
+ref table studentssecurity
+
+ref role StudentSelfService
 
 ref cultureInfo en-US
 

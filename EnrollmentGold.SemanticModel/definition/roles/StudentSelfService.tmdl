@@ -1,0 +1,7 @@
+role StudentSelfService
+	modelPermission: read
+
+	tablePermission studentssecurity = [UserUPN] = USERPRINCIPALNAME()
+
+	annotation PBI_Id = 7f57a1393e3744cc9d34cb2048a50214
+
