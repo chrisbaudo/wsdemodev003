@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MirroredDatabase",
+    "displayName": "AdventureWorks2025"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "95507a6b-e883-9a31-4a9c-d37e2f08cfd8"
+  }
+}
